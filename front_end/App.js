@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, StatusBar} from 'react-native';
 import SubmitButton from "./src/components/SubmitButton";
+import { YellowBox } from 'react-native';
+YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
+import Navigator from "./Navigator";
 
 export default class Indra extends Component {
   render() {
     return (
-
       <View style={styles.container}>
           <StatusBar
          backgroundColor="#093F61"
@@ -16,6 +18,8 @@ export default class Indra extends Component {
              Indian Natural DisasteR Archive {'\n'}INDRA
              </Text>
          </View>
+         {/* <Flood /> */}
+         <Navigator /> 
          <SubmitButton />
       </View>
     );
