@@ -2,4 +2,4 @@
 
 # Demo
 
-<img src="./figures/indra_wireframe_v1.gif"
+<img src="./figures/indra_wireframe_v1.gif"/>
