@@ -3,18 +3,17 @@ import {
     View,
     StyleSheet,
     Text,
-    Button,
     Alert,
 } from 'react-native';
 
-export default class Flood extends Component {
+export default class Rain extends Component {
     render() {
         onPressFlood = () => {
-            Alert.alert(" Flood ");
+            Alert.alert(" Rain ");
         }
         return (
             <View style={styles.container}>
-                <Text>FLOOD</Text>
+            <Text>Rainr</Text>
             </View>
         );
     }
@@ -22,10 +21,10 @@ export default class Flood extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'center',
-        backgroundColor: '#ecf0f1',
-        padding: 8,
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     floodText: {
         fontSize: 30,
