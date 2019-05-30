@@ -17,7 +17,7 @@ export default class App extends Component {
 
          <View style={styles.navbar}>
              <Text style={styles.indra_text}>
-             Indian Natural DisasteR Archive {'\n'}INDRA
+             International Natural DisasteR Archive {'\n'}INDRA
              </Text>
          </View>
          <Buttons navigation={this.props.navigation} />
