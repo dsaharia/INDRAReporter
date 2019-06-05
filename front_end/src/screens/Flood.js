@@ -6,63 +6,59 @@ import {
     Alert,
     TouchableOpacity,
 } from 'react-native';
-// import SQLite from 'react-native-sqlite-storage';
-
-var SQLite = require('react-native-sqlite-storage')
-        var db = SQLite.openDatabase({name: 'a', createFromLocation : "indra_test.db"}, () => {},
-        error => {
-          Alert.alert("ERROR");
-        });
+// NOTE - localhost does not work, make the PC's ip and host the django project in that Ip
 
 export default class Flood extends Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
             latitude: null,
             longitude: null,
             error: null
         };
-
-        }
-        sendData = () => {
-            db.transaction(txn => {
-                txn.executeSql(
-                //   "INSERT INTO `Test` (latitude,longitude) VALUES(?,?)",
-                'SELECT * FROM Test',
-                //   [this.state.latitude,this.state.longitude],
-                [],
-                  (txn, res) => {
-                      for(let i=0;i<res.rows.length;i++){
-                        console.log(res.rows.item(i));
-                      }
-                      console.log()
-                  }
-                );
-              }) 
-        }
-      getLocation = () => {
+    }
+    dataAPI = () => {
+        const url = 'http://10.55.2.40:8000/api/report/'
+        fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    latitude: '-666.8',
+                    longitude: '-1234.5',
+                    timestamp: '10101010',
+                    report_type: 'HAIL',
+                })
+            })
+            .then(result => result.json())
+            .then(result => console.log(result))
+            .catch(error => console.log(error))
+    }
+    getLocation = () => {
         let geoOptions = {
             enableHighAccuracy: true,
             timeout: 20000,
             maximumAge: 1000,
         };
         navigator.geolocation.getCurrentPosition(
-            position => {   
+            position => {
                 this.setState({
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude,
                     error: null,
                 });
-                
-                
+
+
             },
             error => Alert.alert(error.message), geoOptions);
-        
+
     }
     render() {
-        
+
         return (
-            
+
             <View style={styles.container}>
                 <TouchableOpacity onPress = {this.getLocation} style={styles.button}>
                     <Text style={styles.floodText} >LATITUDE: {this.state.latitude}</Text>
@@ -70,11 +66,11 @@ export default class Flood extends Component {
                     {this.state.error ? <Text>Error: {this.state.error}</Text> : null}
                     
                 </TouchableOpacity>
-                <TouchableOpacity onPress={this.sendData} style={styles.button}>
-                    <Text> SEND DATA</Text>
+                <TouchableOpacity onPress={this.dataAPI} style={styles.button}>
+                    <Text> FETCH DATA</Text>
                 </TouchableOpacity>
             </View>
-            
+
         );
     }
 }
@@ -94,5 +90,5 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#DDDDDD',
         padding: 10
-      },
+    },
 });
