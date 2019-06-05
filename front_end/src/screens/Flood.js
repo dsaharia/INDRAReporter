@@ -18,7 +18,7 @@ export default class Flood extends Component {
         };
     }
     dataAPI = () => {
-        const url = 'http://10.55.2.40:8000/api/report/'
+        const url = 'http://10.55.2.40:8000/api/report'
         fetch(url, {
                 method: 'POST',
                 headers: {
