@@ -7,33 +7,43 @@ import {
     TouchableOpacity,
 } from 'react-native';
 // NOTE - localhost does not work, make the PC's ip and host the django project in that Ip
-
+const url = 'https://indrareports.herokuapp.com/api/report/';
 export default class Flood extends Component {
     constructor() {
         super();
         this.state = {
             latitude: null,
             longitude: null,
-            error: null
+            timestamp: null,
+            error: null,
+            total: null,
         };
     }
-    dataAPI = () => {
-        const url = 'http://10.55.2.40:8000/api/report'
+    
+    getData = () => {
+        fetch(url)
+        .then(response => response.json())
+        .then(result => this.setState({
+            total: result.length
+        }))
+        .catch(error => console.log(error))
+    }
+    sendData = () => {
+        const data = {
+            latitude: this.state.latitude,
+            longitude: this.state.longitude,
+            timestamp: this.state.timestamp,
+            report_type: 'Sample',
+        }
         fetch(url, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    latitude: '-666.8',
-                    longitude: '-1234.5',
-                    timestamp: '10101010',
-                    report_type: 'HAIL',
-                })
+                body: JSON.stringify(data),
             })
-            .then(result => result.json())
-            .then(result => console.log(result))
+            .then(Alert.alert("Success"))
             .catch(error => console.log(error))
     }
     getLocation = () => {
@@ -47,10 +57,9 @@ export default class Flood extends Component {
                 this.setState({
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude,
+                    timestamp: position.timestamp,
                     error: null,
                 });
-
-
             },
             error => Alert.alert(error.message), geoOptions);
 
@@ -66,8 +75,12 @@ export default class Flood extends Component {
                     {this.state.error ? <Text>Error: {this.state.error}</Text> : null}
                     
                 </TouchableOpacity>
-                <TouchableOpacity onPress={this.dataAPI} style={styles.button}>
-                    <Text> FETCH DATA</Text>
+                <TouchableOpacity onPress={this.sendData} style={styles.button}>
+                    <Text style={styles.floodText}> Send Data </Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={this.getData} style={styles.button}>
+                    <Text style={styles.floodText}> Get Data </Text>
+                    <Text style={styles.floodText}> Total Data: {this.state.total}</Text>
                 </TouchableOpacity>
             </View>
 
@@ -79,7 +92,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#ecf0f1',
+        backgroundColor: '#b3e5fc',
         padding: 8,
     },
     floodText: {
@@ -88,7 +101,10 @@ const styles = StyleSheet.create({
     },
     button: {
         alignItems: 'center',
-        backgroundColor: '#DDDDDD',
-        padding: 10
+        backgroundColor: '#4dd0e1',
+        padding: 10,
+        borderRadius: 6,
+        margin: 2,
+        borderWidth: 0.5,
     },
 });
