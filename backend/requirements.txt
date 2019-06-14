@@ -1,5 +1,7 @@
-Django==2.1.5
+certifi==2019.3.9
+Django==2.2.2
 django-cors-headers==3.0.2
-djangorestframework==3.9.3
+djangorestframework==3.9.4
 gunicorn==19.9.0
-Jinja2==2.10
+pytz==2019.1
+sqlparse==0.3.0
