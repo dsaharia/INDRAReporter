@@ -1,5 +1,0 @@
-Django==2.1.5
-django-cors-headers==3.0.2
-djangorestframework==3.9.3
-gunicorn==19.9.0
-Jinja2==2.10

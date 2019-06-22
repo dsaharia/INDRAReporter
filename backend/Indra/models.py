@@ -5,4 +5,4 @@ class Reports(models.Model):
 	latitude = models.FloatField()
 	longitude = models.FloatField()
 	timestamp = models.IntegerField()
-	report_type = models.TextField()
+	reporttype = models.TextField()
