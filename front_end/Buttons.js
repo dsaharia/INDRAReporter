@@ -5,26 +5,45 @@ import {
     StyleSheet,
     Text,
     TouchableOpacity,
+    Image,
+    ImageBackground,
 } from 'react-native';
+import { Icon } from 'native-base';
 
 export default class Buttons extends Component {
     render() {
         return (
             <View style = {styles.container}>
-                <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Flood')}
-                style={styles.button}>
-                    <Text style = {styles.text}>
-                        Flood
-                    </Text>
-                </TouchableOpacity>
-                <TouchableOpacity 
-                onPress={() => this.props.navigation.navigate('Rain')}
-                style={styles.button}>
-                    <Text style = {styles.text}>
-                        Rain
-                    </Text>
-                </TouchableOpacity>
+                <View style = {styles.rows}>
+                    <TouchableOpacity
+                    onPress={() => this.props.navigation.navigate('Flood')}
+                    style={styles.button}>
+                        <ImageBackground source={require('./icons/flood.png')} style={styles.image}>
+                            <Text style={styles.text}>Flood</Text>
+                        </ImageBackground>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity 
+                    onPress={() => this.props.navigation.navigate('Rain')}
+                    style={styles.button}>
+                        <ImageBackground source={require('./icons/rain.png')} style={styles.image}>
+                            <Text style={styles.text}>Rain</Text>
+                        </ImageBackground>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity 
+                    onPress={() => this.props.navigation.navigate('Rain')}
+                    style={styles.button}>
+                        <ImageBackground source={require('./icons/landslide.png')} style={styles.image}>
+                            <Text style={styles.text}>Landslide</Text>
+                        </ImageBackground>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <ImageBackground source={require('./icons/visibility.png')} style={styles.image}>
+                            <Text style={styles.text}>Visibility</Text>
+                        </ImageBackground>
+                    </TouchableOpacity>
+                </View>
             </View>
         );
     }
@@ -35,18 +54,29 @@ const styles = StyleSheet.create({
         backgroundColor: '#b3e5fc',
         padding: 8,
     },
+    rows: {
+        backgroundColor: '#b3e5fc',
+        padding: 8,
+        alignSelf: 'flex-start',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+    },
     text: {
         fontWeight: 'bold',
-        color: 'black',
-        fontSize: 20,
-        fontFamily: 'monospace'
+        color: 'red',
+        fontSize: 15,
+        fontFamily: 'monospace',
+        bottom: 0,
+        position: 'absolute',
     },
     button:{
-        alignItems: 'center',
-        backgroundColor: '#64b5f6',
-        padding: 10,
         borderRadius: 6,
-        margin: 2,
-        borderWidth: 0.5,
+        height: 100,
+        width: 100,
+        margin: 7,
+    },
+    image: {
+        height: 70,
+        width: 70,
     },
 });
