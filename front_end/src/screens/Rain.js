@@ -3,17 +3,33 @@ import {
     View,
     StyleSheet,
     Text,
-    Alert,
+    TouchableOpacity,
+    FlatList,
 } from 'react-native';
+
 
 export default class Rain extends Component {
     render() {
-        onPressFlood = () => {
-            Alert.alert(" Rain ");
-        }
+        const rainData = [
+            {key : "Light Rain"},
+            {key : "Heavy Rain"},
+            {key : "Freezing Rain"},
+            {key : "Freezing Drizzle"},
+            {key : "Snow"},
+            {key : "Mixed Rain and Snow"},
+        ]
+        
         return (
             <View style={styles.container}>
-            <Text>Rainr</Text>
+            <FlatList
+            data = {rainData}
+            renderItem = {
+                ({item}) => <TouchableOpacity style={styles.button}>
+                    <Text style={styles.rainText}>{item.key}</Text>
+                </TouchableOpacity>
+            }
+            />
+            
             </View>
         );
     }
@@ -22,12 +38,19 @@ export default class Rain extends Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+      backgroundColor: '#81d4fa',
     },
-    floodText: {
+    button: {
+        alignItems: 'center',
+        backgroundColor: '#1e88e5',
+        padding: 10,
+        borderRadius: 6,
+        margin: 2,
+        borderWidth: 0.5,
+    },
+    rainText: {
         fontSize: 30,
         fontFamily: 'monospace',
+        color: 'white',
     },
 });
