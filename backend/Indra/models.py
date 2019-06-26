@@ -4,5 +4,5 @@ from django.db import models
 class Reports(models.Model):
 	latitude = models.FloatField()
 	longitude = models.FloatField()
-	timestamp = models.IntegerField()
+	timestamp = models.BigIntegerField()
 	reporttype = models.TextField()
