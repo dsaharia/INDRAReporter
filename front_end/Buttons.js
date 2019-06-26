@@ -23,7 +23,7 @@ export default class Buttons extends Component {
                         </ImageBackground>
                     </TouchableOpacity>
 
-                    <TouchableOpacity 
+                    <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('Rain')}
                     style={styles.button}>
                         <ImageBackground source={require('./icons/rain.png')} style={styles.image}>
@@ -31,7 +31,7 @@ export default class Buttons extends Component {
                         </ImageBackground>
                     </TouchableOpacity>
 
-                    <TouchableOpacity 
+                    <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('Rain')}
                     style={styles.button}>
                         <ImageBackground source={require('./icons/landslide.png')} style={styles.image}>
@@ -71,8 +71,8 @@ const styles = StyleSheet.create({
     },
     button:{
         borderRadius: 6,
-        height: 100,
-        width: 100,
+        height: 70,
+        width: 70,
         margin: 7,
     },
     image: {
