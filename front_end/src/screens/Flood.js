@@ -10,6 +10,11 @@ import {
 import { Slider } from 'react-native-gesture-handler';
 // NOTE - localhost does not work, make the PC's ip and host the django project in that Ip
 const url = 'https://indrareport.herokuapp.com/api/report/';
+
+function convertToUTC(unixTime) {
+    const date = new Date(unixTime)
+    return date.toUTCString().toString()
+}
 export default class Flood extends Component {
     constructor() {
         super();
@@ -61,7 +66,8 @@ export default class Flood extends Component {
                 this.setState({
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude,
-                    timestamp: position.timestamp,
+                    // timestamp: position.timestamp,
+                    timestamp: convertToUTC(position.timestamp),
                     error: null,
                 });
             },
@@ -77,6 +83,7 @@ export default class Flood extends Component {
                 <TouchableOpacity onPress = {this.getLocation} style={styles.button}>
                     <Text style={styles.floodText} >LATITUDE: {this.state.latitude}</Text>
                     <Text style={styles.floodText} >LONGITUDE: {this.state.longitude}</Text>
+                    <Text style={styles.floodText} >Timestamp: {this.state.timestamp}</Text>
                     {this.state.error ? <Text>Error: {this.state.error}</Text> : null}
 
                 </TouchableOpacity>
