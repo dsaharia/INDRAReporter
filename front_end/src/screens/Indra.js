@@ -6,6 +6,7 @@ YellowBox.ignoreWarnings([
 ]);
 import Buttons from '../../Buttons';
 import SubmitButton from "../components/SubmitButton";
+import SelectedReport from '../components/SelectedReport';
 
 export default class App extends Component {
   render() {
@@ -21,10 +22,11 @@ export default class App extends Component {
              </Text>
          </View>
          <Buttons navigation={this.props.navigation} />
+         <SelectedReport />
          <SubmitButton />
       </View>
     );
-  
+
   }
 }
 
@@ -49,5 +51,5 @@ const styles = StyleSheet.create(
                 textAlign: 'center',
                 marginTop: 7,
             },
-    
+
     });

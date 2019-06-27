@@ -87,7 +87,6 @@ apply from: "../../node_modules/react-native/react.gradle"
  * the correct one based on the CPU architecture of their device.
  */
 def enableSeparateBuildPerCPUArchitecture = false
-
 /**
  * Run Proguard to shrink the Java bytecode in release builds.
  */

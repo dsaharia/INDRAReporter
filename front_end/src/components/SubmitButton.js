@@ -6,10 +6,10 @@ export default class SubmitButton extends Component {
         onPress = () => {
             Alert.alert(" Thank you for Submitting Report ");
         }
-    
+
         return (
             <View style={styles.submitButton}>
-                <Button 
+                <Button
                     onPress={() => onPress()}
                     title="Submit Report"
                     color='#093F61'
