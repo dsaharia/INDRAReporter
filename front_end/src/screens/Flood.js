@@ -57,9 +57,8 @@ export default class Flood extends Component {
     }
     getLocation = () => {
         let geoOptions = {
-            enableHighAccuracy: true,
+            enableHighAccuracy: false,
             timeout: 20000,
-            maximumAge: 1000,
         };
         navigator.geolocation.getCurrentPosition(
             position => {
