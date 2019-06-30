@@ -18,30 +18,30 @@ export default class Buttons extends Component {
                     <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('Flood')}
                     style={styles.button}>
-                        <ImageBackground source={require('./icons/flood.png')} style={styles.image}>
-                            <Text style={styles.text}>Flood</Text>
+                        <ImageBackground source={require('./icons/flood.png')} style={styles.image}> 
                         </ImageBackground>
+                        <Text style={styles.text}>Flood</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('Rain')}
                     style={styles.button}>
-                        <ImageBackground source={require('./icons/rain.png')} style={styles.image}>
-                            <Text style={styles.text}>Rain</Text>
+                        <ImageBackground source={require('./icons/rain.png')} style={styles.image}>      
                         </ImageBackground>
+                        <Text style={styles.text}>Rain</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('Rain')}
                     style={styles.button}>
                         <ImageBackground source={require('./icons/landslide.png')} style={styles.image}>
-                            <Text style={styles.text}>Landslide</Text>
                         </ImageBackground>
+                        <Text style={styles.text}>Landslide</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity style={styles.button}>
                         <ImageBackground source={require('./icons/visibility.png')} style={styles.image}>
-                            <Text style={styles.text}>Visibility</Text>
                         </ImageBackground>
+                        <Text style={styles.text}>Visibility</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -52,11 +52,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#b3e5fc',
-        padding: 8,
+        padding: 7,
     },
     rows: {
         backgroundColor: '#b3e5fc',
-        padding: 8,
+        padding: 7,
         alignSelf: 'flex-start',
         flexDirection: 'row',
         flexWrap: 'wrap',
@@ -64,19 +64,19 @@ const styles = StyleSheet.create({
     text: {
         fontWeight: 'bold',
         color: 'red',
-        fontSize: 15,
+        fontSize: 13,
         fontFamily: 'monospace',
-        bottom: 0,
-        position: 'absolute',
+        textAlign: 'left',
     },
     button:{
         borderRadius: 6,
-        height: 70,
-        width: 70,
+        height: 90,
+        width: 90,
         margin: 7,
     },
     image: {
         height: 70,
         width: 70,
+        justifyContent: 'center'
     },
 });
