@@ -59,24 +59,22 @@ const styles = StyleSheet.create({
         padding: 7,
         alignSelf: 'flex-start',
         flexDirection: 'row',
-        flexWrap: 'wrap',
+ 
     },
     text: {
         fontWeight: 'bold',
         color: 'red',
         fontSize: 13,
-        fontFamily: 'monospace',
+        fontFamily: 'Ariel',
         textAlign: 'left',
     },
     button:{
-        borderRadius: 6,
-        height: 90,
-        width: 90,
-        margin: 7,
+        height: 70,
+        width: 80,
     },
     image: {
-        height: 70,
-        width: 70,
+        height: 50,
+        width: 50,
         justifyContent: 'center'
     },
 });
