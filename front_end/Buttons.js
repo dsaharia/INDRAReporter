@@ -15,12 +15,10 @@ export default class Buttons extends Component {
         return (
             <View style = {styles.container}>
                 <View style = {styles.rows}>
-                    <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate('Flood')}
-                    style={styles.button}>
-                        <ImageBackground source={require('./icons/flood.png')} style={styles.image}> 
+                    <TouchableOpacity style={styles.button}>
+                        <ImageBackground source={require('./icons/testing.png')} style={styles.image}>
                         </ImageBackground>
-                        <Text style={styles.text}>Flood</Text>
+                        <Text style={styles.text}>Test</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
@@ -31,6 +29,22 @@ export default class Buttons extends Component {
                         <Text style={styles.text}>Rain</Text>
                     </TouchableOpacity>
 
+                    <TouchableOpacity
+                    onPress={() => this.props.navigation.navigate('Flood')}
+                    style={styles.button}>
+                        <ImageBackground source={require('./icons/sea-level.png')} style={styles.image}> 
+                        </ImageBackground>
+                        <Text style={styles.text}>Flood Level</Text>
+                    </TouchableOpacity>
+
+                    
+                    <TouchableOpacity
+                    onPress={() => this.props.navigation.navigate('Flood')}
+                    style={styles.button}>
+                        <ImageBackground source={require('./icons/flood.png')} style={styles.image}> 
+                        </ImageBackground>
+                        <Text style={styles.text}>Flood Damage</Text>
+                    </TouchableOpacity>
                     <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('Rain')}
                     style={styles.button}>
@@ -43,6 +57,21 @@ export default class Buttons extends Component {
                         </ImageBackground>
                         <Text style={styles.text}>Visibility</Text>
                     </TouchableOpacity>
+                    <TouchableOpacity style={styles.button}>
+                        <ImageBackground source={require('./icons/earthquake.png')} style={styles.image}>
+                        </ImageBackground>
+                        <Text style={styles.text}>Earthquake</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button}>
+                        <ImageBackground source={require('./icons/cyclone.png')} style={styles.image}>
+                        </ImageBackground>
+                        <Text style={styles.text}>Cyclone</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button}>
+                        <ImageBackground source={require('./icons/storm.png')} style={styles.image}>
+                        </ImageBackground>
+                        <Text style={styles.text}>Lightning</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         );
@@ -52,29 +81,32 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#b3e5fc',
-        padding: 7,
+        padding: 6,
     },
     rows: {
         backgroundColor: '#b3e5fc',
-        padding: 7,
+        padding: 6,
         alignSelf: 'flex-start',
         flexDirection: 'row',
+        flexWrap: 'wrap',
  
     },
     text: {
         fontWeight: 'bold',
         color: 'red',
-        fontSize: 13,
+        fontSize: 11,
         fontFamily: 'Ariel',
         textAlign: 'left',
     },
     button:{
-        height: 70,
+        height: 80,
         width: 80,
+        paddingLeft: 18,
     },
     image: {
         height: 50,
         width: 50,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        paddingTop: 3,
     },
 });
