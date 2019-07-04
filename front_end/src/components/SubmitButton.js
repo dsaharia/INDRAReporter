@@ -10,7 +10,7 @@ export default class SubmitButton extends Component {
         return (
             <View style={styles.submitButton}>
                 <TouchableOpacity onPress={() => onSubmission()}>
-                    <Text style={styles.text}>Submit </Text>
+                    <Text style={styles.text}>Submit Report</Text>
                 </TouchableOpacity>
             </View>
         );
