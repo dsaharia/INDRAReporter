@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import {
     View,
     StyleSheet,
+    Alert,
     Text,
     TouchableOpacity,
     FlatList,
 } from 'react-native';
 
+const colors = ['#8abccf','#73a2c6','#5d8abd','#4771b2','#2e59a8','#00429d',]
 
 export default class Rain extends Component {
     render() {
@@ -24,7 +26,10 @@ export default class Rain extends Component {
             <FlatList
             data = {rainData}
             renderItem = {
-                ({item}) => <TouchableOpacity style={styles.button}>
+                ({item, index}) => <TouchableOpacity
+                style={[styles.button, {backgroundColor: colors[index % colors.length]}]}
+                onPress = {() => Alert.alert(item.key)}
+                >
                     <Text style={styles.rainText}>{item.key}</Text>
                 </TouchableOpacity>
             }
@@ -43,14 +48,10 @@ const styles = StyleSheet.create({
     button: {
         alignItems: 'center',
         backgroundColor: '#1e88e5',
-        padding: 10,
-        borderRadius: 6,
-        margin: 2,
-        borderWidth: 0.5,
     },
     rainText: {
         fontSize: 30,
-        fontFamily: 'monospace',
+        fontFamily: 'Ariel',
         color: 'white',
     },
 });
