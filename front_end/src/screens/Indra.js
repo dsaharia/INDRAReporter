@@ -57,7 +57,7 @@ export default class App extends Component {
          barStyle="light-content" />
          
          <View style={styles.navbar}>
-             <Text style={styles.indra_text}>
+             <Text style={styles.indraText}>
              Project INDRA {'\n'} International Natural Disaster Research and Analysis
              </Text>
          </View>
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#093F61',
         elevation: 4
     },
-    indra_text: {
+    indraText: {
         color: 'white',
         fontWeight: 'bold',
         fontSize: 14,
