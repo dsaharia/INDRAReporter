@@ -9,11 +9,46 @@ import SubmitButton from "../components/SubmitButton";
 import SelectedReport from '../components/SelectedReport';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'
 
+function convertToUTC(unixTime) {
+    const date = new Date(unixTime)
+    return date.toUTCString().toString()
+}
 
 export default class App extends Component {
-//     componentDidMount(){
-//             Alert.alert("Mounted!")
-// }
+
+    constructor() {
+        super();
+        this.state = {
+            loc: false,
+            latitude: null,
+            longitude: null,
+            timestamp: null,
+            error: null,
+        };
+    }
+    componentWillMount() {
+      console.log("Will mount!")
+      const that = this
+        const geoOptions = {
+            enableHighAccuracy: false,
+            timeout: 20000,
+        };
+        navigator.geolocation.getCurrentPosition(
+            position => {
+                this.setState({
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude,
+                    // timestamp: position.timestamp,
+                    timestamp: convertToUTC(position.timestamp),
+                    error: null,
+                    loc: true,
+                },
+                console.log("set state!"));
+                
+            },
+            error => Alert.alert(error.message), geoOptions);
+        
+    }
     render() {
         return (
             <View style={styles.container}>
@@ -29,22 +64,24 @@ export default class App extends Component {
          <Buttons navigation={this.props.navigation} />
          <SelectedReport />
          <View style={styles.mapContainer}>
+         {this.state.loc &&
                 <MapView
                 style={styles.map}
                   provider={PROVIDER_GOOGLE}
                   region={{
-                    latitude: 26.052349,
-                    longitude: 92.860390,
-                    latitudeDelta: 0.8,
-                    longitudeDelta: 0.8,
+                    latitude: this.state.latitude,
+                    longitude: this.state.longitude,
+                    latitudeDelta: 0.3,
+                    longitudeDelta: 0.3,
                   }}>
                   <MapView.Marker
-                        coordinate={{latitude: 26.052349,
-                        longitude: 92.860390}}
-                        title={"title"}
+                        coordinate={{latitude: this.state.latitude,
+                        longitude: this.state.longitude}}
+                        title={"Your Location"}
                         description={"description"}
                      />
                   </MapView>
+              }
           </View>
          <SubmitButton />
       </View>
@@ -80,6 +117,6 @@ const styles = StyleSheet.create({
         left: 11,
         right: 11,
         bottom: 20,
-  },
+    },
 
 });
