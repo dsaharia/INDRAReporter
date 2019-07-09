@@ -42,8 +42,7 @@ export default class App extends Component {
                     timestamp: convertToUTC(position.timestamp),
                     error: null,
                     loc: true,
-                },
-                console.log("set state!"));
+                });
                 
             },
             error => Alert.alert(error.message), geoOptions);
@@ -116,7 +115,7 @@ const styles = StyleSheet.create({
         top: 0,
         left: 11,
         right: 11,
-        bottom: 20,
+        bottom: 70,
     },
 
 });
