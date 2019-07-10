@@ -61,7 +61,7 @@ export default class App extends Component {
              </Text>
          </View>
          <Buttons navigation={this.props.navigation} />
-         <SelectedReport />
+         <SelectedReport report="Sample Type" />
          <View style={styles.mapContainer}>
          {this.state.loc &&
                 <MapView

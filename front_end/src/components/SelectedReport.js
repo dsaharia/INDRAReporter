@@ -3,8 +3,8 @@ import {Text, View, StyleSheet} from 'react-native';
 
 const SelectedReport = (props) => (
     <View style={styles.container}>
-        <Text style={styles.text}>Selected Report:</Text>
-        <Text style={styles.text}>{this.props.report}</Text>
+        <Text style={styles.text}>Selected Report: </Text>
+        <Text style={styles.text}> {props.report}</Text>
     </View>
 );
 
@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
         right: 11,
         bottom: 5,
         borderRadius: 13,
+        flexDirection: 'row',
     },
     text: {
         fontFamily: 'Ariel',
