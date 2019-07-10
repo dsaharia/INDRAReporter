@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
-const SelectedReport = () => (
+const SelectedReport = (props) => (
     <View style={styles.container}>
         <Text style={styles.text}>Selected Report:</Text>
+        <Text style={styles.text}>{this.props.report}</Text>
     </View>
 );
 
