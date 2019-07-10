@@ -37,7 +37,6 @@ export default class Buttons extends Component {
                         <Text style={styles.text}>Flood Level</Text>
                     </TouchableOpacity>
 
-                    
                     <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('Flood')}
                     style={styles.button}>
@@ -45,6 +44,7 @@ export default class Buttons extends Component {
                         </ImageBackground>
                         <Text style={styles.text}>Flood Damage</Text>
                     </TouchableOpacity>
+
                     <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('Rain')}
                     style={styles.button}>
@@ -52,21 +52,25 @@ export default class Buttons extends Component {
                         </ImageBackground>
                         <Text style={styles.text}>Landslide</Text>
                     </TouchableOpacity>
+
                     <TouchableOpacity style={styles.button}>
                         <ImageBackground source={require('./icons/visibility.png')} style={styles.image}>
                         </ImageBackground>
                         <Text style={styles.text}>Visibility</Text>
                     </TouchableOpacity>
+
                     <TouchableOpacity style={styles.button}>
                         <ImageBackground source={require('./icons/earthquake.png')} style={styles.image}>
                         </ImageBackground>
                         <Text style={styles.text}>Earthquake</Text>
                     </TouchableOpacity>
+
                     <TouchableOpacity style={styles.button}>
                         <ImageBackground source={require('./icons/cyclone.png')} style={styles.image}>
                         </ImageBackground>
                         <Text style={styles.text}>Cyclone</Text>
                     </TouchableOpacity>
+                    
                     <TouchableOpacity style={styles.button}>
                         <ImageBackground source={require('./icons/storm.png')} style={styles.image}>
                         </ImageBackground>
