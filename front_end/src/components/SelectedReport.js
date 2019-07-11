@@ -3,7 +3,9 @@ import {Text, View, StyleSheet} from 'react-native';
 
 const SelectedReport = (props) => (
     <View style={styles.container}>
+    <View styles='backgroundColor': 'red'>
         <Text style={styles.text}>Selected Report: </Text>
+    </View>
         <Text style={styles.text}> {props.report}</Text>
     </View>
 );
