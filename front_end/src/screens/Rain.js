@@ -8,7 +8,7 @@ import {
     FlatList,
 } from 'react-native';
 
-const colors = ['#91cde3', '#8abccf', '#73a2c6', '#5d8abd', '#4771b2', '#2e59a8', '#00429d', ]
+const colors = ['#91cfe6', '#8abccf', '#73a2c6', '#5d8abd', '#4771b2', '#2e59a8', '#00429d', ]
 
 export default class Rain extends Component {
     render() {
