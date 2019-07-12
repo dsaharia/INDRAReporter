@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     rainText: {
         fontSize: 30,
         fontFamily: 'Ariel',
-        color: '#093F61',
+        color: 'white',
     },
     headerText: {
         
