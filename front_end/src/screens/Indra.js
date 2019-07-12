@@ -7,7 +7,7 @@ YellowBox.ignoreWarnings([
 import Buttons from '../../Buttons';
 import SubmitButton from "../components/SubmitButton";
 import SelectedReport from '../components/SelectedReport';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 function convertToUTC(unixTime) {
     const date = new Date(unixTime)
@@ -70,8 +70,8 @@ export default class App extends Component {
                   region={{
                     latitude: this.state.latitude,
                     longitude: this.state.longitude,
-                    latitudeDelta: 0.3,
-                    longitudeDelta: 0.3,
+                    latitudeDelta: 0.07,
+                    longitudeDelta: 0.07,
                   }}>
                   <MapView.Marker
                         coordinate={{latitude: this.state.latitude,
