@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
             justifyContent: 'center',
             fontSize: 20,
             color: 'white',
+            fontFamily: 'Ariel',
 
         }
 });

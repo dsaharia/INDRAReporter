@@ -43,10 +43,10 @@ export default class App extends Component {
                     error: null,
                     loc: true,
                 });
-                
+
             },
             error => Alert.alert(error.message), geoOptions);
-        
+
     }
     render() {
         return (
@@ -54,7 +54,7 @@ export default class App extends Component {
           <StatusBar
          backgroundColor="#093F61"
          barStyle="light-content" />
-         
+
          <View style={styles.navbar}>
              <Text style={styles.indraText}>
              Project INDRA {'\n'} International Natural Disaster Research and Analysis
@@ -70,14 +70,13 @@ export default class App extends Component {
                   region={{
                     latitude: this.state.latitude,
                     longitude: this.state.longitude,
-                    latitudeDelta: 0.07,
-                    longitudeDelta: 0.07,
+                    latitudeDelta: 0.03,
+                    longitudeDelta: 0.03,
                   }}>
                   <MapView.Marker
                         coordinate={{latitude: this.state.latitude,
                         longitude: this.state.longitude}}
-                        title={"Your Location"}
-                        description={"description"}
+                        title={"Your are here"}
                      />
                   </MapView>
               }
@@ -99,7 +98,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#b3e5fc'
     },
     navbar: {
-        height: 55,
+        height: 50,
         backgroundColor: '#093F61',
         elevation: 4
     },
