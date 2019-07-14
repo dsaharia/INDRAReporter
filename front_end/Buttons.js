@@ -24,15 +24,15 @@ export default class Buttons extends Component {
                     <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('Rain')}
                     style={styles.button}>
-                        <ImageBackground source={require('./icons/rain.png')} style={styles.image}>      
+                        <ImageBackground source={require('./icons/rain.png')} style={styles.image}>
                         </ImageBackground>
                         <Text style={styles.text}>Rain</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate('Flood')}
+                    onPress={() => this.props.navigation.navigate('FloodLevel')}
                     style={styles.button}>
-                        <ImageBackground source={require('./icons/sea-level.png')} style={styles.image}> 
+                        <ImageBackground source={require('./icons/sea-level.png')} style={styles.image}>
                         </ImageBackground>
                         <Text style={styles.text}>Flood Level</Text>
                     </TouchableOpacity>
@@ -40,7 +40,7 @@ export default class Buttons extends Component {
                     <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('Flood')}
                     style={styles.button}>
-                        <ImageBackground source={require('./icons/flood.png')} style={styles.image}> 
+                        <ImageBackground source={require('./icons/flood.png')} style={styles.image}>
                         </ImageBackground>
                         <Text style={styles.text}>Flood Damage</Text>
                     </TouchableOpacity>
@@ -70,7 +70,7 @@ export default class Buttons extends Component {
                         </ImageBackground>
                         <Text style={styles.text}>Cyclone</Text>
                     </TouchableOpacity>
-                    
+
                     <TouchableOpacity style={styles.button}>
                         <ImageBackground source={require('./icons/storm.png')} style={styles.image}>
                         </ImageBackground>
@@ -93,13 +93,13 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-start',
         flexDirection: 'row',
         flexWrap: 'wrap',
- 
+
     },
     text: {
         fontWeight: 'bold',
         color: 'red',
         fontSize: 11,
-        fontFamily: 'Ariel',
+        fontFamily: 'Arial',
         textAlign: 'left',
     },
     button:{
