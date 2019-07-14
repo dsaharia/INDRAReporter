@@ -14,13 +14,14 @@
     "react-native": "^0.55.2",
     "react-native-gesture-handler": "^1.0.5",
     "react-native-maps": "^0.24.2",
-    "react-navigation": "^3.9.1"
+    "react-navigation": "^3.9.1",
+    "rn-vertical-slider": "^1.0.4"
   },
   "devDependencies": {
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "24.0.0",
     "jest": "24.0.0",
-    "metro-react-native-babel-preset": "0.51.1",
+    "metro-react-native-babel-preset": "^0.51.1",
     "react-test-renderer": "16.6.3"
   },
   "jest": {
