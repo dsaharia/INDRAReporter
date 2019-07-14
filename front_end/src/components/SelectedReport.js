@@ -17,12 +17,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     selectedReportText: {
-        fontFamily: 'Ariel',
+        fontFamily: 'ArialMT',
         fontSize: 15,
         color: 'red',
     },
     reportText: {
-        fontFamily: 'Ariel',
+        fontFamily: 'Arial',
         fontSize: 15,
         color: 'white',
     },

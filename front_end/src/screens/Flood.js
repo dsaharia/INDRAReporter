@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     },
     floodText: {
         fontSize: 30,
-        fontFamily: 'monospace',
+        fontFamily: 'Arial',
     },
     button: {
         alignItems: 'center',

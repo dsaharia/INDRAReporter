@@ -38,7 +38,7 @@ export default class Rain extends Component {
                 </TouchableOpacity>
             }
             />
-            
+
             </View>
         );
     }
@@ -59,11 +59,11 @@ const styles = StyleSheet.create({
     },
     rainText: {
         fontSize: 30,
-        fontFamily: 'Ariel',
+        fontFamily: 'Arial',
         color: 'white',
     },
     headerText: {
-        
+
         fontSize: 30,
     },
     headerContainer: {
