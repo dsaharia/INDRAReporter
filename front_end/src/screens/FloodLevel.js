@@ -6,7 +6,7 @@ import SubmitButton from '../components/SubmitButton';
 const FloodLevel = () => (
   <View style={styles.container}>
       <ImageBackground source={require('./man.png')} style={{width: '60%', height: '80%'}}>
-            <View style={styles.container}>
+            <View style={styles.sliderContainer}>
                 <VerticalSlider
                   value={1}
                   disabled={false}
@@ -35,6 +35,12 @@ const FloodLevel = () => (
 );
 
 const styles = StyleSheet.create({
+  sliderContainer: {
+    padding: 14,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+  },
   container: {
     padding: 14,
     justifyContent: 'center',
