@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Text, Alert, ImageBackground, StyleSheet, View } from 'react-native';
 import VerticalSlider from 'rn-vertical-slider';
 import SubmitButton from '../components/SubmitButton';
 
 let val;
-const FloodLevel = () => (
-  <View style={styles.container}>
+class FloodLevel extends Component {
+  constructor(){
+    super()
+    this.state = {
+      sliderVal : null,
+    }
+  }
+    render() {
+        return (
+            <View style={styles.container}>
       <ImageBackground source={require('./man.png')} style={{width: '70%', height: '80%'}}>
             <View style={styles.sliderContainer}>
                 <VerticalSlider
@@ -18,7 +26,9 @@ const FloodLevel = () => (
                   // }}
                   onComplete={(value) => {
                     // Alert.alert(JSON.stringify(value))
-                    val = value
+                    this.setState({
+                      sliderVal : value,
+                    })
                   }}
                   width={70}
                   height={327}
@@ -33,26 +43,28 @@ const FloodLevel = () => (
             </View>
       </ImageBackground>
       <View style={{backgroundColor: 'red'}}>
-        <Text style={{fontSize: 30}}>{value}</Text>
+        <Text style={{fontSize: 30}}>{this.state.sliderVal}</Text>
       </View>
       <SubmitButton />
     </View>
-);
+        )
+    }
+};
 
 const styles = StyleSheet.create({
-  sliderContainer: {
-    padding: 14,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'transparent',
-  },
-  container: {
-    padding: 14,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9E9E9E',
-    flex: 1,
-  },
+    sliderContainer: {
+        padding: 14,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'transparent',
+    },
+    container: {
+        padding: 14,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#9E9E9E',
+        flex: 1,
+    },
 });
 
 export default FloodLevel;
