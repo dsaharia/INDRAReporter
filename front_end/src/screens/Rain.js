@@ -47,7 +47,7 @@ export default class Rain extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#bdbdbd',
+        backgroundColor: '#9E9E9E',
         paddingLeft: 15,
         paddingRight: 15,
     },
