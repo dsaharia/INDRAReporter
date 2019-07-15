@@ -1,11 +1,12 @@
 import React from 'react';
-import { Alert, ImageBackground, StyleSheet, View } from 'react-native';
+import { Text, Alert, ImageBackground, StyleSheet, View } from 'react-native';
 import VerticalSlider from 'rn-vertical-slider';
 import SubmitButton from '../components/SubmitButton';
 
+let val;
 const FloodLevel = () => (
   <View style={styles.container}>
-      <ImageBackground source={require('./man.png')} style={{width: '60%', height: '80%'}}>
+      <ImageBackground source={require('./man.png')} style={{width: '70%', height: '80%'}}>
             <View style={styles.sliderContainer}>
                 <VerticalSlider
                   value={1}
@@ -16,13 +17,14 @@ const FloodLevel = () => (
                   //   console.log("CHANGE", value);
                   // }}
                   onComplete={(value) => {
-                    Alert.alert(JSON.stringify(value))
+                    // Alert.alert(JSON.stringify(value))
+                    val = value
                   }}
                   width={70}
-                  height={260}
+                  height={327}
                   step={1}
-                  borderRadius={5}
-                  minimumTrackTintColor='#00FFFFFF'
+                  borderRadius={0}
+                  minimumTrackTintColor='#1E88E5'
                   maximumTrackTintColor='transparent'
                   showBallIndicator={true}
                   ballIndicatorColor={"red"}
@@ -30,6 +32,9 @@ const FloodLevel = () => (
                 />
             </View>
       </ImageBackground>
+      <View style={{backgroundColor: 'red'}}>
+        <Text style={{fontSize: 30}}>{value}</Text>
+      </View>
       <SubmitButton />
     </View>
 );
@@ -45,7 +50,8 @@ const styles = StyleSheet.create({
     padding: 14,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'transparent',
+    backgroundColor: '#9E9E9E',
+    flex: 1,
   },
 });
 
