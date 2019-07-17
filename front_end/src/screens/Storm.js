@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { Text, TouchableOpacity, View, FlatList, StyleSheet } from 'react-native';
 
+const reports = [
+    { key: "Cyclone" },
+    { key: "Tornado" },
+    { key: "Lightning/thunderstorm" },
+    { key: "Sand/dust storm" },
+    { key: "Winter storm/blizzard" },
+    { key: "Wind" },
+    { key: "Severe storm" },
+]
 export default class Visibility extends Component {
-    const reports = [
-        { key: "Cyclone" },
-        { key: "Tornado" },
-        { key: "Lightning/thunderstorm" },
-        { key: "Sand/dust storm" },
-        { key: "Winter storm/blizzard" },
-        { key: "Wind" },
-        { key: "Severe storm" },
-    ]
+
     render() {
         return (
             <View style = {styles.container}>
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#1e88e5',
-        height: 50,
+        height: 60,
     },
     text: {
         fontSize: 30,
@@ -58,7 +59,6 @@ const styles = StyleSheet.create({
     headerContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 10,
         paddingBottom: 30,
         paddingTop: 30,
     }
