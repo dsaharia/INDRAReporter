@@ -7,8 +7,16 @@ const reports = [
     { key: "Cloud-to-Air" },
     { key: "Spider" },
 ]
-export default class Visibility extends Component {
+const colors = ['#29b6f6', '#039be5']
 
+export default class Visibility extends Component {
+    constructor(props){
+        super(props);
+    }
+    onSelect = (option) => {
+        this.props.navigation.state.params.selectReport(option);
+        this.props.navigation.goBack();
+    }
     render() {
         return (
             <View style = {styles.container}>
@@ -20,8 +28,8 @@ export default class Visibility extends Component {
                 data = {reports}
                 renderItem = {
                     ({item, index}) => <TouchableOpacity
-                    style = {styles.button}
-                    onpress = {() => Alert.alert(item.key)} >
+                    style = {[styles.button, {backgroundColor: colors[index % colors.length]}]}
+                    onPress = {() => this.onSelect(item.key)} >
                         <Text style={styles.text}> {item.key}</Text>
                     </TouchableOpacity>
                 }
