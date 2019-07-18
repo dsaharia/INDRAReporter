@@ -17,6 +17,14 @@ const reports = [
 
 const colors = ['#74a9cf', '#0571b0', '#fdae61', '#d7191c']
 export default class FloodImpact extends Component {
+    constructor(props){
+        super(props);
+        // console.log(this.props.navigation.state.params)
+    }
+    onSelect = (option) => {
+        this.props.navigation.state.params.selectReport(option);
+        this.props.navigation.goBack()
+    }
 
     render() {
         return (
@@ -30,7 +38,7 @@ export default class FloodImpact extends Component {
                 renderItem = {
                     ({item, index}) => <TouchableOpacity
                     style = {[styles.button, {backgroundColor: colors[index % colors.length]}]}
-                    onpress = {() => Alert.alert(item.key)} >
+                    onPress = {() => this.onSelect(item.key)} >
                         <Text style={styles.text}> {item.key}</Text>
                     </TouchableOpacity>
                 }
