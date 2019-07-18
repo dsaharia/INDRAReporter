@@ -70,7 +70,7 @@ export default class FloodLevel extends Component {
                 />
             </View>
       </ImageBackground>
-      <View style={{backgroundColor: 'red'}}>
+      <View style={styles.value}>
         <Text style={{fontSize: 30}}>{this.state.sliderVal}</Text>
       </View>
 
@@ -116,6 +116,11 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: 'white',
         fontFamily: 'Arial',
+
+    },
+    value: {
+      backgroundColor: 'red',
+
 
     }
 });
