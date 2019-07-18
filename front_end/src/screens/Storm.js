@@ -10,7 +10,17 @@ const reports = [
     { key: "Wind" },
     { key: "Severe storm" },
 ]
+const colors = ['#29b6f6', '#039be5']
+
 export default class Visibility extends Component {
+    constructor(props){
+        super(props);
+        // console.log(this.props.navigation.state.params)
+    }
+    onSelect = (option) => {
+        this.props.navigation.state.params.selectReport(option);
+        this.props.navigation.goBack()
+    }
 
     render() {
         return (
@@ -23,8 +33,8 @@ export default class Visibility extends Component {
                 data = {reports}
                 renderItem = {
                     ({item, index}) => <TouchableOpacity
-                    style = {styles.button}
-                    onpress = {() => Alert.alert(item.key)} >
+                    style = {[styles.button, {backgroundColor: colors[index % colors.length]}]}
+                    onPress = {() => this.onSelect(item.key)} >
                         <Text style={styles.text}> {item.key}</Text>
                     </TouchableOpacity>
                 }
@@ -45,8 +55,7 @@ const styles = StyleSheet.create({
     button: {
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#1e88e5',
-        height: 60,
+        height: 55,
     },
     text: {
         fontSize: 30,
@@ -55,6 +64,7 @@ const styles = StyleSheet.create({
     },
     questionText: {
         fontSize: 30,
+        fontWeight: 'bold',
     },
     headerContainer: {
         alignItems: 'center',
