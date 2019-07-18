@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import { Text, TouchableOpacity, View, FlatList, StyleSheet } from 'react-native';
 
-export default class Visibility extends Component {
-    const reports = [
+const reports = [
         { key: "Light Fog" },
         { key: "Dense Fog" },
         { key: "Smog/Air Pollution" },
         { key: "Blowing Dust" },
         { key: "Blowing Snow" },
     ]
+export default class Visibility extends Component {
+    constructor(props){
+        super(props);
+    }
+    onSelect = (option) => {
+        this.props.navigation.state.params.selectReport(option);
+        this.props.navigation.goBack()
+    }
+
     render() {
         return (
             <View style = {styles.container}>
@@ -21,7 +29,7 @@ export default class Visibility extends Component {
                 renderItem = {
                     ({item, index}) => <TouchableOpacity
                     style = {styles.button}
-                    onpress = {() => Alert.alert(item.key)} >
+                    onPress = {() => this.onSelect(item.key)} >
                         <Text style={styles.text}> {item.key}</Text>
                     </TouchableOpacity>
                 }
@@ -35,7 +43,7 @@ export default class Visibility extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#9E9E9E',
+        backgroundColor: '#b3e5fc',
         paddingLeft: 15,
         paddingRight: 15,
     },
