@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
         padding: 14,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#9E9E9E',
+        backgroundColor: '#b3e5fc',
         flex: 1,
     },
     submitButton: {
