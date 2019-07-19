@@ -1,5 +1,4 @@
-
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     View,
     StyleSheet,
@@ -8,21 +7,26 @@ import {
     Image,
     ImageBackground,
 } from 'react-native';
-import { Icon } from 'native-base';
 
 export default class Buttons extends Component {
+    constructor(props){
+        super(props);
+    }
     render() {
         return (
             <View style = {styles.container}>
                 <View style = {styles.rows}>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button}
+                    onPress={() => this.props.navigation.navigate('Test')}>
                         <ImageBackground source={require('./icons/testing.png')} style={styles.image}>
                         </ImageBackground>
                         <Text style={styles.text}>Test</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate('Rain')}
+                    onPress={() => {this.props.navigation.navigate('Rain',{
+                            selectReport: this.props.selectReport() });
+                    }}
                     style={styles.button}>
                         <ImageBackground source={require('./icons/rain.png')} style={styles.image}>
                         </ImageBackground>
@@ -30,7 +34,12 @@ export default class Buttons extends Component {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate('FloodLevel')}
+                    onPress={() => {this.props.navigation.navigate('FloodLevel' , {
+                            lat: this.props.location.latitude,
+                            long: this.props.location.longitude,
+                            timestamp: this.props.location.timestamp,
+                        });
+                    }}
                     style={styles.button}>
                         <ImageBackground source={require('./icons/sea-level.png')} style={styles.image}>
                         </ImageBackground>
@@ -38,22 +47,27 @@ export default class Buttons extends Component {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate('Flood')}
+                    onPress={() => {this.props.navigation.navigate('FloodImpact',{
+                            selectReport: this.props.selectReport() });
+                    }}
                     style={styles.button}>
                         <ImageBackground source={require('./icons/flood.png')} style={styles.image}>
                         </ImageBackground>
-                        <Text style={styles.text}>Flood Damage</Text>
+                        <Text style={styles.text}>Flood Impact</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                    // onPress={() => this.props.navigation.navigate('Rain')}
+                    onPress={() => {this.props.navigation.navigate('Landslide')}}
                     style={styles.button}>
                         <ImageBackground source={require('./icons/landslide.png')} style={styles.image}>
                         </ImageBackground>
                         <Text style={styles.text}>Landslide</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button}
+                    onPress={() => {this.props.navigation.navigate('Visibility' ,{
+                            selectReport: this.props.selectReport() });
+                    }} >
                         <ImageBackground source={require('./icons/visibility.png')} style={styles.image}>
                         </ImageBackground>
                         <Text style={styles.text}>Visibility</Text>
@@ -65,13 +79,19 @@ export default class Buttons extends Component {
                         <Text style={styles.text}>Earthquake</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button}
+                    onPress={() => {this.props.navigation.navigate('Storm', {
+                            selectReport: this.props.selectReport() })
+                    }} >
                         <ImageBackground source={require('./icons/cyclone.png')} style={styles.image}>
                         </ImageBackground>
-                        <Text style={styles.text}>Cyclone</Text>
+                        <Text style={styles.text}>Storm</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button}
+                    onPress={() => {this.props.navigation.navigate('Lightning' , {
+                            selectReport: this.props.selectReport() });
+                    }} >
                         <ImageBackground source={require('./icons/storm.png')} style={styles.image}>
                         </ImageBackground>
                         <Text style={styles.text}>Lightning</Text>
@@ -100,9 +120,9 @@ const styles = StyleSheet.create({
         color: 'red',
         fontSize: 11,
         fontFamily: 'Arial',
-        textAlign: 'left',
+        textAlign: 'justify',
     },
-    button:{
+    button: {
         height: 80,
         width: 80,
         paddingLeft: 18,
