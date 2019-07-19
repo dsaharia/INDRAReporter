@@ -24,11 +24,19 @@ export default class App extends Component {
             longitude: null,
             timestamp: null,
             error: null,
+            reporttype: null,
         };
+
     }
+    onReportSelect = (report) => {
+      this.setState({
+        reporttype: report
+      }, () => console.log("state:", this.state.reporttype))
+      console.log("Sent", report)
+    }
+
     componentWillMount() {
-      console.log("Will mount!")
-      const that = this
+      // console.log("Will mount!")
         const geoOptions = {
             enableHighAccuracy: false,
             timeout: 20000,
@@ -60,8 +68,12 @@ export default class App extends Component {
              Project INDRA {'\n'} International Natural Disaster Research and Analysis
              </Text>
          </View>
-         <Buttons navigation={this.props.navigation} />
-         <SelectedReport report="Sample Type" />
+         {this.state.loc && <Buttons 
+          navigation={this.props.navigation} 
+          location={this.state}
+          selectReport={() => this.onReportSelect}
+          />}
+         <SelectedReport report={this.state.reporttype} />
          <View style={styles.mapContainer}>
          {this.state.loc &&
                 <MapView
@@ -70,8 +82,8 @@ export default class App extends Component {
                   region={{
                     latitude: this.state.latitude,
                     longitude: this.state.longitude,
-                    latitudeDelta: 0.03,
-                    longitudeDelta: 0.03,
+                    latitudeDelta: 0.001,
+                    longitudeDelta: 0.01,
                   }}>
                   <MapView.Marker
                         coordinate={{latitude: this.state.latitude,
@@ -81,7 +93,7 @@ export default class App extends Component {
                   </MapView>
               }
           </View>
-         <SubmitButton />
+         <SubmitButton data={this.state}/>
       </View>
         );
 
