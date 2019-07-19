@@ -1,15 +1,37 @@
-import React, { Component } from "react"
-import { TouchableOpacity, Text, Alert, Button, StyleSheet, View} from "react-native"
+import React, { Component } from "react";
+import { TouchableOpacity, Text, Alert, StyleSheet, View} from "react-native";
+
+const url = 'https://indrareport.herokuapp.com/api/report/';
 
 export default class SubmitButton extends Component {
-    render() {
-        onSubmission = () => {
-            Alert.alert(" Thanks for your citizen science report! ");
+    constructor(props) {
+        super(props);
+    }
+    sendData = ()  => {
+        const data = {
+            latitude: this.props.data.latitude,
+            longitude: this.props.data.longitude,
+            timestamp: this.props.data.timestamp,
+            reporttype: this.props.data.reporttype,
         }
-
+        // console.log(data)
+        fetch(url, {
+                method: 'POST',
+                headers: {
+                     'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(Alert.alert(" Thanks for your citizen science report! "))
+            // .then(response => response.json())
+            // .then(result => console.log(result))
+            .catch(error => Alert.alert(error))
+    }
+    render() {
         return (
             <View style={styles.submitButton}>
-                <TouchableOpacity onPress={() => onSubmission()}>
+                <TouchableOpacity onPress={this.sendData}>
                     <Text style={styles.text}>Submit Report</Text>
                 </TouchableOpacity>
             </View>
