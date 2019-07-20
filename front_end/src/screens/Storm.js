@@ -48,7 +48,7 @@ export default class Visibility extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#9E9E9E',
+        backgroundColor: '#b3e5fc',
         paddingLeft: 15,
         paddingRight: 15,
     },
