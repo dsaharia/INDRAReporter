@@ -10,18 +10,26 @@ import {
 
 const colors = ['#91cfe6', '#8abccf', '#73a2c6', '#5d8abd', '#4771b2', '#2e59a8', '#00429d', ]
 
-export default class Rain extends Component {
-    render() {
-        const rainData = [
-            { key: "No Rain" },
-            { key: "Light Rain" },
-            { key: "Heavy Rain" },
-            { key: "Freezing Rain" },
-            { key: "Freezing Drizzle" },
-            { key: "Snow" },
-            { key: "Mixed Rain and Snow" },
-        ]
+const rainData = [
+    { key: "No Rain" },
+    { key: "Light Rain (Drizzle)" },
+    { key: "Heavy Rain" },
+    { key: "Freezing Rain" },
+    { key: "Freezing Drizzle" },
+    { key: "Snow" },
+    { key: "Mixed Rain and Snow" },
+]
 
+export default class Rain extends Component {
+    constructor(props){
+        super(props);
+        // console.log(this.props.navigation.state.params)
+    }
+    onSelect = (option) => {
+        this.props.navigation.state.params.selectReport(option);
+        this.props.navigation.goBack()
+    }
+    render() {
         return (
             <View style={styles.container}>
             <View style={styles.headerContainer}>
@@ -32,7 +40,7 @@ export default class Rain extends Component {
             renderItem = {
                 ({item, index}) => <TouchableOpacity
                 style={[styles.button, {backgroundColor: colors[index % colors.length]}]}
-                onPress = {() => Alert.alert(item.key)}
+                onPress = {() => this.onSelect(item.key)}
                 >
                     <Text style={styles.rainText}>{item.key}</Text>
                 </TouchableOpacity>
@@ -47,7 +55,7 @@ export default class Rain extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#9E9E9E',
+        backgroundColor: '#b3e5fc',
         paddingLeft: 15,
         paddingRight: 15,
     },
