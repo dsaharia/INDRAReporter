@@ -5,9 +5,9 @@ import {
     Text,
     Alert,
     TouchableOpacity,
+    Dimensions,
 } from 'react-native';
 
-import { Slider } from 'react-native-gesture-handler';
 // NOTE - localhost does not work, make the PC's ip and host the django project in that Ip
 const url = 'https://indrareport.herokuapp.com/api/report/';
 
@@ -29,11 +29,13 @@ export default class Flood extends Component {
 
     getData = () => {
         fetch(url)
-        .then(response => response.json())
-        .then(result => this.setState({
-            total: result.length
-        }))
-        .catch(error => console.log(error))
+            .then(response => response.json())
+            .then(result => this.setState({
+                total: result.length
+            }))
+            .catch(error => console.log(error))
+        console.log(Dimensions.get('window').width)
+        console.log(Dimensions.get('window').height)
     }
     sendData = () => {
         const data = {
@@ -45,7 +47,7 @@ export default class Flood extends Component {
         fetch(url, {
                 method: 'POST',
                 headers: {
-                     'Accept': 'application/json',
+                    'Accept': 'application/json',
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data),
@@ -78,7 +80,6 @@ export default class Flood extends Component {
         return (
 
             <View style={styles.container}>
-                <Slider></Slider>
                 <TouchableOpacity onPress = {this.getLocation} style={styles.button}>
                     <Text style={styles.floodText} >LATITUDE: {this.state.latitude}</Text>
                     <Text style={styles.floodText} >LONGITUDE: {this.state.longitude}</Text>
