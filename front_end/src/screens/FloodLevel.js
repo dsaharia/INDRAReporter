@@ -42,7 +42,7 @@ export default class FloodLevel extends Component {
     render() {
         return (
             <View style={styles.container}>
-      <ImageBackground source={require('./man.png')} style={{width: '70%', height: '80%'}}>
+      <ImageBackground source={require('./test.png')} style={{width: '90%', height: '80%'}}>
             <View style={styles.sliderContainer}>
                 <VerticalSlider
                   value={1}
@@ -58,8 +58,8 @@ export default class FloodLevel extends Component {
                       sliderVal : value,
                     })
                   }}
-                  width={70}
-                  height={327}
+                  width={60}
+                  height={190}
                   step={1}
                   borderRadius={0}
                   minimumTrackTintColor='#1E88E5'
@@ -87,13 +87,14 @@ export default class FloodLevel extends Component {
 
 const styles = StyleSheet.create({
     sliderContainer: {
-        padding: 14,
+        paddingTop: 150,
+        paddingBottom: 220,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'transparent',
     },
     container: {
-        padding: 14,
+        // padding: 14,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#b3e5fc',
