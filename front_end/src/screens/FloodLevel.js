@@ -14,7 +14,7 @@ export default class FloodLevel extends Component {
             long: long,
             timestamp: timestamp,
         }
-        console.log(this.state)
+
     }
     onSubmission = () => {
         const data = {
@@ -23,7 +23,6 @@ export default class FloodLevel extends Component {
             timestamp: this.state.timestamp,
             reporttype: this.state.sliderVal,
         }
-        console.log(data)
         fetch(url, {
                 method: 'POST',
                 headers: {
@@ -32,17 +31,15 @@ export default class FloodLevel extends Component {
                 },
                 body: JSON.stringify(data),
             })
-            .then(Alert.alert("Success"))
+            .then(Alert.alert(" Thanks for your citizen science report! "))
             // .then(response => response.json())
             // .then(result => console.log(result))
             .catch(error => console.log(error))
-
-        Alert.alert(JSON.stringify(this.state.sliderVal));
     }
     render() {
         return (
             <View style={styles.container}>
-      <ImageBackground source={require('./test.png')} style={{width: '90%', height: '80%'}}>
+      <ImageBackground source={require('./test.png')} style={{width: '90%', height: '85%'}}>
             <View style={styles.sliderContainer}>
                 <VerticalSlider
                   value={1}
@@ -58,20 +55,20 @@ export default class FloodLevel extends Component {
                       sliderVal : value,
                     })
                   }}
-                  width={60}
-                  height={190}
+                  width={65}
+                  height={180}
                   step={1}
                   borderRadius={0}
                   minimumTrackTintColor='#1E88E5'
                   maximumTrackTintColor='transparent'
-                  showBallIndicator={true}
+                  showBallIndicator={false}
                   ballIndicatorColor={"red"}
                   ballIndicatorTextColor={"green"}
                 />
             </View>
       </ImageBackground>
       <View style={styles.value}>
-        <Text style={{fontSize: 30}}>{this.state.sliderVal}</Text>
+        <Text style={{fontSize: 25}}>Value Selected: {this.state.sliderVal}</Text>
       </View>
 
       <View style={styles.submitButton}>
@@ -120,7 +117,8 @@ const styles = StyleSheet.create({
 
     },
     value: {
-      backgroundColor: 'red',
+      position: 'absolute',
+      bottom: 70,
 
 
     }

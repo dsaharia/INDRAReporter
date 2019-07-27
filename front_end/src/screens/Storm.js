@@ -55,16 +55,16 @@ const styles = StyleSheet.create({
     button: {
         alignItems: 'center',
         justifyContent: 'center',
-        height: 55,
+        height: 60,
+        
     },
     text: {
-        fontSize: 30,
+        fontSize: 25,
         fontFamily: 'Arial',
         color: 'white',
     },
     questionText: {
         fontSize: 30,
-        fontWeight: 'bold',
     },
     headerContainer: {
         alignItems: 'center',
