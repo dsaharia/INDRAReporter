@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Text, TouchableOpacity, View, FlatList, StyleSheet } from 'react-native';
 
+const colors = ['#29b6f6', '#039be5']
+
 const reports = [
         { key: "Light Fog" },
         { key: "Dense Fog" },
@@ -28,7 +30,7 @@ export default class Visibility extends Component {
                 data = {reports}
                 renderItem = {
                     ({item, index}) => <TouchableOpacity
-                    style = {styles.button}
+                    style = {[styles.button, {backgroundColor: colors[index % colors.length]}]}
                     onPress = {() => this.onSelect(item.key)} >
                         <Text style={styles.text}> {item.key}</Text>
                     </TouchableOpacity>
