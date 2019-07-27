@@ -1,41 +1,131 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-import Flood from "./src/screens/Flood";
+import { createStackNavigator } from 'react-navigation';
+import FloodImpact from "./src/screens/FloodImpact";
 import Rain from "./src/screens/Rain";
-import Indra from './src/screens/Indra'
-import FloodLevel from './src/screens/FloodLevel'
+import Indra from './src/screens/Indra';
+import FloodLevel from './src/screens/FloodLevel';
+import Storm from './src/screens/Storm';
+import Visibility from './src/screens/Visibility';
+import Lightning from './src/screens/Lightning';
+import Flood from './src/screens/Flood';
 
 const Navigator = createStackNavigator({
-    Flood: {
+    Test: {
         screen: Flood,
-    navigationOptions: {
-        title: 'Flood',
+        navigationOptions: {
+            title: 'Test',
+            headerStyle: {
+                backgroundColor: '#093F61'
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+                flex: 1,
+                alignSelf: 'center',
+
+            }
         },
+    },
+    FloodImpact: {
+        screen: FloodImpact,
+        navigationOptions: {
+            title: 'Flood Impact',
+            headerStyle: {
+                backgroundColor: '#093F61'
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+                flex: 1,
+                alignSelf: 'center',
+
+            }
+        },
+
     },
     FloodLevel: {
         screen: FloodLevel,
-    navigationOptions: {
-        title: 'Flood Level',
+        navigationOptions: {
+            title: 'Flood Level',
+            headerStyle: {
+                backgroundColor: '#093F61'
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+                flex: 1,
+                alignSelf: 'center',
+
+            }
         },
     },
     Rain: {
         screen: Rain,
         navigationOptions: {
-          title: 'Rain',
+            title: 'Rain',
+            headerStyle: {
+                backgroundColor: '#093F61'
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+                flex: 1,
+                alignSelf: 'center',
+
+            }
+        },
+    },
+    Storm: {
+        screen: Storm,
+        navigationOptions: {
+            title: 'Storm',
+            headerStyle: {
+                backgroundColor: '#093F61'
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+                flex: 1,
+                alignSelf: 'center',
+
+            }
+        },
+    },
+    Visibility: {
+        screen: Visibility,
+        navigationOptions: {
+            title: 'Visibility',
+            headerStyle: {
+                backgroundColor: '#093F61'
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+                flex: 1,
+                alignSelf: 'center',
+
+            }
+        },
+    },
+    Lightning: {
+        screen: Lightning,
+        navigationOptions: {
+            title: 'Lightning',
+            headerStyle: {
+                backgroundColor: '#093F61'
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+                flex: 1,
+                alignSelf: 'center',
+
+            }
         },
     },
     Indra: {
         screen: Indra,
         navigationOptions: {
-        title: 'Indra',
-        header: null,
+            title: 'Indra',
+            header: null,
         }
     },
 
-},
-{
+}, {
     initialRouteName: 'Indra'
-}
-);
+});
 
 
 export default Navigator;
