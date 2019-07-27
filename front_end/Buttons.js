@@ -4,9 +4,11 @@ import {
     StyleSheet,
     Text,
     TouchableOpacity,
-    Image,
+    Dimensions,
     ImageBackground,
 } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 export default class Buttons extends Component {
     constructor(props){
@@ -105,7 +107,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#b3e5fc',
-        padding: 6,
     },
     rows: {
         backgroundColor: '#b3e5fc',
@@ -113,6 +114,7 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-start',
         flexDirection: 'row',
         flexWrap: 'wrap',
+        paddingLeft: 20,
 
     },
     text: {
@@ -120,17 +122,21 @@ const styles = StyleSheet.create({
         color: 'red',
         fontSize: 11,
         fontFamily: 'Arial',
-        textAlign: 'justify',
+        textAlign: 'left',
+        // backgroundColor: 'red',
+        justifyContent: 'space-evenly', //important
     },
     button: {
-        height: 80,
+        height: 87,
         width: 80,
-        paddingLeft: 18,
+        paddingLeft: 15,
+        paddingTop: 10,
     },
     image: {
         height: 50,
         width: 50,
         justifyContent: 'center',
+        alignItems: 'center',
         paddingTop: 3,
     },
 });
