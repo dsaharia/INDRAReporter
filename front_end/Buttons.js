@@ -127,8 +127,10 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly', //important
     },
     button: {
-        height: 87,
-        width: 80,
+        // height: 85,
+        // width: 80,
+        height: '35%',
+        width: '25%',
         paddingLeft: 15,
         paddingTop: 10,
     },
