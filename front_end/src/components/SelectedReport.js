@@ -25,6 +25,8 @@ const styles = StyleSheet.create({
         fontFamily: 'Arial',
         fontSize: 15,
         color: 'white',
+        paddingLeft: 2,
+        textAlign: 'left'
     },
     reportType: {
         backgroundColor: '#093F61',
@@ -34,7 +36,7 @@ const styles = StyleSheet.create({
         paddingRight: 15,
         left: 11,
         bottom: 3,
-        width: 211,
+        width: '59%',
         borderRadius: 5,
     },
     selectedReport: {
