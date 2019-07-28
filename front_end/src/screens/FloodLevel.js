@@ -9,7 +9,7 @@ export default class FloodLevel extends Component {
         super(props)
         const { lat, long, timestamp } = this.props.navigation.state.params
         this.state = {
-            sliderVal: null,
+            sliderVal: 0,
             lat: lat,
             long: long,
             timestamp: timestamp,
@@ -39,13 +39,17 @@ export default class FloodLevel extends Component {
     render() {
         return (
             <View style={styles.container}>
-      <ImageBackground source={require('./test.png')} style={{width: '90%', height: '85%'}}>
+                <View style = {styles.headerContainer}>
+                    <Text style = {styles.questionText}>Use the blue slider to submit Water Level</Text>
+                </View>
+
+      <ImageBackground source={require('./final.png')} style={styles.imageStyle}>
             <View style={styles.sliderContainer}>
                 <VerticalSlider
-                  value={1}
+                  value={0.5}
                   disabled={false}
                   min={0}
-                  max={100}
+                  max={10}
                   // onChange={(value: number) => {
                   //   console.log("CHANGE", value);
                   // }}
@@ -55,11 +59,11 @@ export default class FloodLevel extends Component {
                       sliderVal : value,
                     })
                   }}
-                  width={65}
-                  height={180}
+                  width={63}
+                  height={220}
                   step={1}
-                  borderRadius={0}
-                  minimumTrackTintColor='#1E88E5'
+                  borderRadius={1}
+                  minimumTrackTintColor='#42A5F5'
                   maximumTrackTintColor='transparent'
                   showBallIndicator={false}
                   ballIndicatorColor={"red"}
@@ -68,7 +72,7 @@ export default class FloodLevel extends Component {
             </View>
       </ImageBackground>
       <View style={styles.value}>
-        <Text style={{fontSize: 25}}>Value Selected: {this.state.sliderVal}</Text>
+        <Text style={{fontSize: 23}}>Water level: {this.state.sliderVal} meter</Text>
       </View>
 
       <View style={styles.submitButton}>
@@ -84,21 +88,36 @@ export default class FloodLevel extends Component {
 
 const styles = StyleSheet.create({
     sliderContainer: {
-        paddingTop: 150,
-        paddingBottom: 220,
-        justifyContent: 'center',
-        alignItems: 'center',
+        position: 'absolute',
+        left: '40%',
+        bottom: '3%',
+        // paddingTop: 140,
+        // paddingBottom: 220,
         backgroundColor: 'transparent',
+        borderWidth: 2
     },
     container: {
         // padding: 14,
-        justifyContent: 'center',
-        alignItems: 'center',
+        // justifyContent: 'center',
+        // alignItems: 'center',
         backgroundColor: '#b3e5fc',
         flex: 1,
     },
+    imageStyle: {
+        position: 'absolute',
+        width: '68%',
+        height: '68%',
+        left: '16%',
+        bottom: '25%',
+        // paddingRight: 50,
+        // paddingBottom: 50,
+        // paddingTop: 10,
+        // borderWidth: 6,
+        // left: 90
+        // position: 'absolute',
+        // bottom: 90
+    },
     submitButton: {
-        // width: '100%',
         position: 'absolute',
         bottom: 10,
         borderRadius: 13,
@@ -118,8 +137,16 @@ const styles = StyleSheet.create({
     },
     value: {
       position: 'absolute',
-      bottom: 70,
-
-
-    }
+      bottom: '12%',
+      left: '25%',
+      alignItems: 'center',
+    },
+    headerContainer: {
+        paddingBottom: 15,
+        paddingTop: 10,
+    },
+    questionText: {
+        fontSize: 20,
+        textAlign: 'center',
+    },
 });
