@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-start',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        paddingLeft: 20,
+        paddingLeft: 15,
 
     },
     text: {
@@ -122,23 +122,24 @@ const styles = StyleSheet.create({
         color: 'red',
         fontSize: 11,
         fontFamily: 'Arial',
-        textAlign: 'left',
-        // backgroundColor: 'red',
+        textAlign: 'center',
         justifyContent: 'space-evenly', //important
+        paddingTop: 1,
     },
     button: {
         // height: 85,
         // width: 80,
         height: '35%',
         width: '25%',
-        paddingLeft: 15,
+        paddingLeft: 5,
         paddingTop: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     image: {
         height: 50,
         width: 50,
-        justifyContent: 'center',
-        alignItems: 'center',
         paddingTop: 3,
+        marginBottom: 2,
     },
 });
