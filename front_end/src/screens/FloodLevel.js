@@ -40,16 +40,18 @@ export default class FloodLevel extends Component {
         return (
             <View style={styles.container}>
                 <View style = {styles.headerContainer}>
-                    <Text style = {styles.questionText}>Use the blue slider to submit Water Level</Text>
+                    <Text style = {styles.questionText}>
+                    Use to blue slider to submit Water Level relative to a 6ft/1.8m tall person.
+                    </Text>
                 </View>
 
       <ImageBackground source={require('./final.png')} style={styles.imageStyle}>
             <View style={styles.sliderContainer}>
                 <VerticalSlider
-                  value={0.5}
+                  value={0.25}
                   disabled={false}
                   min={0}
-                  max={10}
+                  max={3}
                   // onChange={(value: number) => {
                   //   console.log("CHANGE", value);
                   // }}
@@ -59,8 +61,8 @@ export default class FloodLevel extends Component {
                       sliderVal : value,
                     })
                   }}
-                  width={63}
-                  height={220}
+                  width={250}
+                  height={385}
                   step={1}
                   borderRadius={1}
                   minimumTrackTintColor='#42A5F5'
@@ -72,7 +74,7 @@ export default class FloodLevel extends Component {
             </View>
       </ImageBackground>
       <View style={styles.value}>
-        <Text style={{fontSize: 23}}>Water level: {this.state.sliderVal} meter</Text>
+        <Text style={{fontSize: 21}}>Water level: {this.state.sliderVal} meters/{(this.state.sliderVal * 3.281).toFixed(2)} foot</Text>
       </View>
 
       <View style={styles.submitButton}>
@@ -89,12 +91,12 @@ export default class FloodLevel extends Component {
 const styles = StyleSheet.create({
     sliderContainer: {
         position: 'absolute',
-        left: '40%',
+        left: '2%',
         bottom: '3%',
         // paddingTop: 140,
         // paddingBottom: 220,
         backgroundColor: 'transparent',
-        borderWidth: 2
+        borderWidth: 1
     },
     container: {
         // padding: 14,
@@ -108,7 +110,7 @@ const styles = StyleSheet.create({
         width: '68%',
         height: '68%',
         left: '16%',
-        bottom: '25%',
+        bottom: '21%',
         // paddingRight: 50,
         // paddingBottom: 50,
         // paddingTop: 10,
@@ -138,15 +140,15 @@ const styles = StyleSheet.create({
     value: {
       position: 'absolute',
       bottom: '12%',
-      left: '25%',
+      left: '6%',
       alignItems: 'center',
     },
     headerContainer: {
-        paddingBottom: 15,
+        paddingBottom: 20,
         paddingTop: 10,
     },
     questionText: {
-        fontSize: 20,
+        fontSize: 18,
         textAlign: 'center',
     },
 });
