@@ -59,7 +59,9 @@ export default class Buttons extends Component {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                    onPress={() => {this.props.navigation.navigate('Landslide')}}
+                    onPress={() => {this.props.navigation.navigate('Landslide', {
+                        selectReport: this.props.selectReport() });
+                    }}
                     style={styles.button}>
                         <ImageBackground source={require('./icons/landslide.png')} style={styles.image}>
                         </ImageBackground>
