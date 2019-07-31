@@ -7,6 +7,7 @@ import Storm from './src/screens/Storm';
 import Visibility from './src/screens/Visibility';
 import Lightning from './src/screens/Lightning';
 import Flood from './src/screens/Flood';
+import Landslide from './src/screens/Landslide';
 
 const Navigator = createStackNavigator({
     Test: {
@@ -59,6 +60,21 @@ const Navigator = createStackNavigator({
         screen: Rain,
         navigationOptions: {
             title: 'Rain',
+            headerStyle: {
+                backgroundColor: '#093F61'
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+                flex: 1,
+                alignSelf: 'center',
+
+            }
+        },
+    },
+    Landslide: {
+        screen: Landslide,
+        navigationOptions: {
+            title: 'Landslide',
             headerStyle: {
                 backgroundColor: '#093F61'
             },
