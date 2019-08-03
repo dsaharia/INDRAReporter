@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { YellowBox, View, Alert, Text, StyleSheet, StatusBar } from 'react-native';
+import { Platform, YellowBox, View, Alert, Text, StyleSheet, StatusBar } from 'react-native';
 YellowBox.ignoreWarnings([
     'Warning: isMounted(...) is deprecated',
     'Module RCTImageLoader',
@@ -112,7 +112,8 @@ const styles = StyleSheet.create({
     navbar: {
         height: 50,
         backgroundColor: '#093F61',
-        elevation: 4
+        elevation: 4,
+	paddingTop: Platform.OS === 'ios' ? 8 : 0,
     },
     indraText: {
         color: 'white',
