@@ -65,7 +65,7 @@ export default class App extends Component {
 
          <View style={styles.navbar}>
              <Text style={styles.indraText}>
-             Project INDRA {'\n'} International Natural Disaster Research and Analysis
+             INDRA Reporter {'\n'} International Natural hazarDs Research and Analysis
              </Text>
          </View>
          {this.state.loc && <Buttons 
@@ -119,6 +119,7 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         fontSize: 14,
+        fontFamily: 'Roboto',
         textAlign: 'center',
         marginTop: 8,
     },
