@@ -13,7 +13,6 @@ All notable changes to this project will be documented in this file.
 - Interaction with the backend API updated.
 - Location Extracted sucessfully.
 - Map sucessfully plotted with a marker.
-- 
 
 ## 0.0.25 - 2019-07-13 (Minor release)
 ### Fixed
@@ -21,3 +20,7 @@ All notable changes to this project will be documented in this file.
 
 ## 0.0.3 - 2019-06-27
 ### Added
+
+## 0.0.3 - 2020-05-07
+### Changed App Name
+- Changed Name to INDRA Reporter
