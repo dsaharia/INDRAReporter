@@ -50,7 +50,10 @@ export default class Buttons extends Component {
 
                     <TouchableOpacity
                     onPress={() => {this.props.navigation.navigate('FloodImpact',{
-                            selectReport: this.props.selectReport() });
+                            selectReport: this.props.selectReport(),
+                            lat: this.props.location.latitude,
+                            long: this.props.location.longitude,
+                            timestamp: this.props.location.timestamp, });
                     }}
                     style={styles.button}>
                         <ImageBackground source={require('./icons/flood.png')} style={styles.image}>
@@ -60,7 +63,7 @@ export default class Buttons extends Component {
 
                     <TouchableOpacity
                     onPress={() => {this.props.navigation.navigate('Landslide', {
-                        selectReport: this.props.selectReport() });
+                        selectReport: this.props.selectReport()});
                     }}
                     style={styles.button}>
                         <ImageBackground source={require('./icons/landslide.png')} style={styles.image}>
