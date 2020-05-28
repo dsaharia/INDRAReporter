@@ -6,8 +6,9 @@ const url = 'https://indrareport.herokuapp.com/api/report/';
 
 export default class FloodLevel extends Component {
     constructor(props) {
-        super(props)
-        const { lat, long, timestamp } = this.props.navigation.state.params
+        super(props);
+        const { lat, long, timestamp } = this.props.navigation.state.params;
+        console.log(lat, long, timestamp)
         this.state = {
             sliderVal: 0,
             lat: lat,
