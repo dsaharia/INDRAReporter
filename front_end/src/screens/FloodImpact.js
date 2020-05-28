@@ -7,7 +7,7 @@ import {
     TouchableOpacity,
     FlatList,
 } from 'react-native';
-import Navigator from '../../Navigator';
+// import Navigator from '../../Navigator';
 
 const reports = [
     { key: "MINIMAL - Isolated flooding in low-lying areas. Wet road surfaces." },
@@ -23,8 +23,12 @@ export default class FloodImpact extends Component {
         // console.log(this.props.navigation.state.params)
     }
     onSelect = (option) => {
-        this.props.navigation.push('FloodLevel');
-        console.log(this.props.navigation);
+        this.props.navigation.navigate('FloodLevel', {
+            lat: this.props.navigation.state.params.lat,
+            long: this.props.navigation.state.params.long,
+            timestamp: this.props.navigation.state.params.timestamp,
+        });
+        console.log("ss", this.props.navigation.state.params.timestamp);
         this.props.navigation.state.params.selectReport(option);
     }
 
