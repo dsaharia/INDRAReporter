@@ -10,13 +10,13 @@ import {
 // import Navigator from '../../Navigator';
 
 const reports = [
-    { key: "MINIMAL - Isolated flooding in low-lying areas. Wet road surfaces." },
-    { key: "MINOR - Localized flooding of land and roads. Disruption of travel to key flooding sites." },
-    { key: "SIGNIFICANT - Affecting section of communities. Flooded street and stranded vehicles." },
     { key: "SEVERE - Affecting entire communities. Buildings swept away. Large scale evacuation." },
+    { key: "SIGNIFICANT - Affecting section of communities. Flooded street and stranded vehicles." },
+    { key: "MINOR - Localized flooding of land and roads. Disruption of travel to key flooding sites." },
+    { key: "MINIMAL - Isolated flooding in low-lying areas. Wet road surfaces." },
 ]
 
-const colors = ['#74a9cf', '#0571b0', '#fdae61', '#d7191c']
+const colors = ['#D9070A', '#F4810C', '#FCE50C', '#197EFA']
 export default class FloodImpact extends Component {
     constructor(props){
         super(props);
@@ -28,7 +28,7 @@ export default class FloodImpact extends Component {
             long: this.props.navigation.state.params.long,
             timestamp: this.props.navigation.state.params.timestamp,
         });
-        console.log("ss", this.props.navigation.state.params.timestamp);
+        // console.log("ss", this.props.navigation.state.params.timestamp);
         this.props.navigation.state.params.selectReport(option);
     }
 
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 22,
         fontFamily: 'Arial',
-        color: 'white',
+        color: 'black',
         textAlign: 'left',
         padding: 5,
     },
