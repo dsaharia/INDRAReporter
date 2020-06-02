@@ -45,7 +45,7 @@ export default class Buttons extends Component {
                     style={styles.button}>
                         <ImageBackground source={require('./icons/flood.png')} style={styles.image}>
                         </ImageBackground>
-                        <Text style={styles.text}>Flood Impact</Text>
+                        <Text style={styles.text}>Flooding</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
