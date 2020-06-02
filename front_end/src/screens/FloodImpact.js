@@ -43,7 +43,9 @@ export default class FloodImpact extends Component {
                 data = {reports}
                 renderItem = {
                     ({item, index}) => <TouchableOpacity
-                    style = {[styles.button, {backgroundColor: colors[index % colors.length]}]}
+                    style = {[styles.button, {
+                        backgroundColor: colors[index % colors.length],
+                        height: 105,}]}
                     onPress = {() => this.onSelect(item.key)} >
                         <Text style={styles.text}> {item.key}</Text>
                     </TouchableOpacity>
@@ -66,10 +68,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#1e88e5',
+        // height: 20,
+        // width: 20,
     },
     text: {
         fontSize: 22,
-        fontFamily: 'Arial',
+        fontFamily: 'Roboto',
         color: 'black',
         textAlign: 'left',
         padding: 5,
@@ -79,7 +83,6 @@ const styles = StyleSheet.create({
     },
     headerContainer: {
         alignItems: 'center',
-        justifyContent: 'center',
         paddingBottom: 30,
         paddingTop: 30,
     }
