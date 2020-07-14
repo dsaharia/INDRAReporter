@@ -53,7 +53,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#1e88e5',
-        height: 50,
+        height: 60,
+        borderRadius: 10,
+        marginBottom: 10,
     },
     text: {
         fontSize: 30,
@@ -67,7 +69,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         padding: 10,
-        paddingBottom: 30,
+        paddingBottom: 25,
         paddingTop: 30,
     }
 });
