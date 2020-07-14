@@ -8,14 +8,15 @@ import Buttons from '../../Buttons';
 import SubmitButton from "../components/SubmitButton";
 import SelectedReport from '../components/SelectedReport';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+// import { Draw } from '../../DrawerNavigator';
 
 function convertToUTC(unixTime) {
     const date = new Date(unixTime)
     return date.toUTCString().toString()
 }
 
-export default class App extends Component {
 
+export default class App extends Component {
     constructor() {
         super();
         this.state = {
@@ -56,13 +57,15 @@ export default class App extends Component {
             error => Alert.alert(error.message), geoOptions);
 
     }
+
+
     render() {
         return (
             <View style={styles.container}>
           <StatusBar
          backgroundColor="#093F61"
          barStyle="light-content" />
-
+         
          <View style={styles.navbar}>
              <Text style={styles.indraText}>
              INDRA Reporter {'\n'} International Natural hazarDs Research and Analysis
