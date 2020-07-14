@@ -36,31 +36,21 @@ export default class Buttons extends Component {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                    onPress={() => {this.props.navigation.navigate('FloodLevel' , {
+                    onPress={() => {this.props.navigation.navigate('FloodImpact',{
+                            selectReport: this.props.selectReport(),
                             lat: this.props.location.latitude,
                             long: this.props.location.longitude,
-                            timestamp: this.props.location.timestamp,
-                        });
-                    }}
-                    style={styles.button}>
-                        <ImageBackground source={require('./icons/sea-level.png')} style={styles.image}>
-                        </ImageBackground>
-                        <Text style={styles.text}>Flood Level</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity
-                    onPress={() => {this.props.navigation.navigate('FloodImpact',{
-                            selectReport: this.props.selectReport() });
+                            timestamp: this.props.location.timestamp, });
                     }}
                     style={styles.button}>
                         <ImageBackground source={require('./icons/flood.png')} style={styles.image}>
                         </ImageBackground>
-                        <Text style={styles.text}>Flood Impact</Text>
+                        <Text style={styles.text}>Flooding</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
                     onPress={() => {this.props.navigation.navigate('Landslide', {
-                        selectReport: this.props.selectReport() });
+                        selectReport: this.props.selectReport()});
                     }}
                     style={styles.button}>
                         <ImageBackground source={require('./icons/landslide.png')} style={styles.image}>
@@ -109,9 +99,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#b3e5fc',
+        // justifyContent: 'center',
     },
     rows: {
-        backgroundColor: '#b3e5fc',
+        // backgroundColor: '#b3e5fc',
         padding: 6,
         alignSelf: 'flex-start',
         flexDirection: 'row',
@@ -122,26 +113,27 @@ const styles = StyleSheet.create({
     text: {
         fontWeight: 'bold',
         color: 'red',
-        fontSize: 11,
+        fontSize: 13,
         fontFamily: 'Arial',
         textAlign: 'center',
         justifyContent: 'space-evenly', //important
-        paddingTop: 1,
+        paddingTop: 5,
     },
     button: {
         // height: 85,
         // width: 80,
-        height: '35%',
-        width: '25%',
-        paddingLeft: 5,
-        paddingTop: 10,
-        justifyContent: 'center',
+        height: '30%',
+        width: '30%',
+        // paddingLeft: 5,
+        // paddingTop: 10,
+        padding: 10,
         alignItems: 'center',
     },
     image: {
         height: 50,
         width: 50,
-        paddingTop: 3,
-        marginBottom: 2,
+        padding: 20,
+        // paddingTop: 3,
+        // marginBottom: 2,
     },
 });

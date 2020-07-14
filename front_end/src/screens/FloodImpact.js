@@ -3,7 +3,6 @@ import {
   View,
   StyleSheet,
   Text,
-  Alert,
   TouchableOpacity,
   FlatList,
 } from "react-native";
@@ -26,14 +25,19 @@ const reports = [
 ];
 
 const colors = ["#74a9cf", "#0571b0", "#fdae61", "#FF3333", "#d7191c"];
+
 export default class FloodImpact extends Component {
   constructor(props) {
     super(props);
     // console.log(this.props.navigation.state.params)
   }
   onSelect = (option) => {
-    this.props.navigation.state.params.selectReport(option);
-    this.props.navigation.goBack();
+    this.props.navigation.navigate("FloodLevel", {
+      lat: this.props.navigation.state.params.lat,
+      long: this.props.navigation.state.params.long,
+      timestamp: this.props.navigation.state.params.timestamp,
+      floodOption: option,
+    });
   };
 
   render() {
@@ -49,7 +53,10 @@ export default class FloodImpact extends Component {
             <TouchableOpacity
               style={[
                 styles.button,
-                { backgroundColor: colors[index % colors.length] },
+                {
+                  backgroundColor: colors[index % colors.length],
+                  height: 105,
+                },
               ]}
               onPress={() => this.onSelect(item.key)}
             >
