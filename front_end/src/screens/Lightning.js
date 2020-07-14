@@ -7,7 +7,7 @@ const reports = [
     { key: "Cloud-to-Air" },
     { key: "Spider" },
 ]
-const colors = ['#29b6f6', '#039be5']
+const colors = ['#392A3D', '#63375B', '#A66384', '#CA8AA5'];
 
 export default class Visibility extends Component {
     constructor(props){
@@ -21,7 +21,7 @@ export default class Visibility extends Component {
         return (
             <View style = {styles.container}>
                 <View style = {styles.headerContainer}>
-                    <Text style = {styles.questionText}> What kind of flashes are you seeing?</Text>
+                    <Text style = {styles.questionText}> What are you seeing?</Text>
                 </View>
 
                 <FlatList 
@@ -51,7 +51,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#1e88e5',
-        height: 50,
+        height: 60,
+        borderRadius: 10,
+        marginBottom: 10,
     },
     text: {
         fontSize: 30,

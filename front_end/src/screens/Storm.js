@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 import { Text, TouchableOpacity, View, FlatList, StyleSheet } from 'react-native';
 
 const reports = [
-    { key: "Cyclone" },
-    { key: "Tornado" },
-    { key: "Lightning/thunderstorm" },
-    { key: "Sand/dust storm" },
-    { key: "Winter storm/blizzard" },
-    { key: "Wind" },
-    { key: "Severe storm" },
+    { key: "Catastrophic - Very severe and extensive damage to doors and windows, some complete building failures, massive evacuation." },
+    { key: "Extreme - Failure of roofs, major erosion, evacuation near the sea-shore." },
+    { key: "Extensive - Large trees blown down, some structural damage to buildings" },
+    { key: "Moderate - Small trees down" },
+    { key: "Minor - Damage to trees and foliage, low-lying roads flooded" },
 ]
-const colors = ['#29b6f6', '#039be5']
+const colors = ['#1a237e', '#283593', '#3f51b5', '#7986cb', '#9fa8da'];
 
 export default class Visibility extends Component {
     constructor(props){
@@ -53,15 +51,20 @@ const styles = StyleSheet.create({
         paddingRight: 15,
     },
     button: {
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
-        height: 60,
+        height: 110,
+        borderRadius: 10,
+        marginBottom: 10,
         
     },
     text: {
-        fontSize: 25,
+        padding: 5,
+        alignItems: 'stretch',
+        fontSize: 20,
         fontFamily: 'Arial',
         color: 'white',
+        textAlign: 'left',
     },
     questionText: {
         fontSize: 30,
@@ -69,7 +72,7 @@ const styles = StyleSheet.create({
     headerContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-        paddingBottom: 30,
-        paddingTop: 30,
+        paddingBottom: 25,
+        paddingTop: 25,
     }
 });
