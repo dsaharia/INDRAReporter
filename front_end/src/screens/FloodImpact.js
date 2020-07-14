@@ -9,13 +9,14 @@ import {
 } from 'react-native';
 
 const reports = [
-    { key: "MINIMAL - Isolated flooding in low-lying areas. Wet road surfaces." },
-    { key: "MINOR - Localized flooding of land and roads. Disruption of travel to key flooding sites." },
-    { key: "SIGNIFICANT - Affecting section of communities. Flooded street and stranded vehicles." },
-    { key: "SEVERE - Affecting entire communities. Buildings swept away. Large scale evacuation." },
+    { key: "NONE - No flooding observed" },
+    { key: "MINOR - Flooding in low-lying areas, some inconvenience to the public." },
+    {"key": "MODERATE - Flooded roads. Disruption of travel to flooding sites"},
+    { key: "MAJOR -  Affecting communities. Flooded roads, stranded vehicles, and inundated houses." },
+    { key: "SEVERE - Large scale evacuation of people. Permanent houses and vehicles swept away" },
 ]
 
-const colors = ['#74a9cf', '#0571b0', '#fdae61', '#d7191c']
+const colors = ['#74a9cf', '#0571b0', '#fdae61', '#FF3333','#d7191c']
 export default class FloodImpact extends Component {
     constructor(props){
         super(props);
@@ -57,12 +58,14 @@ const styles = StyleSheet.create({
         paddingRight: 15,
     },
     button: {
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
-        backgroundColor: '#1e88e5',
+        height: 110,
+        borderRadius: 10,
+        marginBottom: 10,
     },
     text: {
-        fontSize: 22,
+        fontSize: 20,
         fontFamily: 'Arial',
         color: 'white',
         textAlign: 'left',
