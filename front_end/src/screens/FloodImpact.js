@@ -8,23 +8,24 @@ import {
 } from "react-native";
 
 const reports = [
-  { key: "NONE - No flooding observed" },
-  {
-    key:
-      "MINOR - Flooding in low-lying areas, some inconvenience to the public.",
-  },
-  { key: "MODERATE - Flooded roads. Disruption of travel to flooding sites" },
-  {
-    key:
-      "MAJOR -  Affecting communities. Flooded roads, stranded vehicles, and inundated houses.",
-  },
   {
     key:
       "SEVERE - Large scale evacuation of people. Permanent houses and vehicles swept away",
   },
+  {
+    key:
+      "MAJOR -  Affecting communities. Flooded roads, stranded vehicles, and inundated houses.",
+  },
+  { key: "MODERATE - Flooded roads. Disruption of travel to flooding sites" },
+
+  {
+    key:
+      "MINOR - Flooding in low-lying areas, some inconvenience to the public.",
+  },
+  { key: "NONE - No flooding observed" },
 ];
 
-const colors = ["#74a9cf", "#0571b0", "#fdae61", "#FF3333", "#d7191c"];
+const colors = ["#EC3E40", "#FF9B2B", "#F5D800", "#377FC7", "#01A46D"];
 
 export default class FloodImpact extends Component {
   constructor(props) {
@@ -55,7 +56,6 @@ export default class FloodImpact extends Component {
                 styles.button,
                 {
                   backgroundColor: colors[index % colors.length],
-                  height: 105,
                 },
               ]}
               onPress={() => this.onSelect(item.key)}
@@ -79,14 +79,12 @@ const styles = StyleSheet.create({
   button: {
     alignItems: "flex-start",
     justifyContent: "center",
-    height: 110,
-    borderRadius: 10,
-    marginBottom: 10,
+    height: 94,
   },
   text: {
-    fontSize: 20,
+    fontSize: 22,
     fontFamily: "Arial",
-    color: "white",
+    color: "black",
     textAlign: "left",
     padding: 5,
   },
