@@ -10,7 +10,7 @@ import {
 const reports = [
   {
     key:
-      "Catastrophic - Very severe and extensive damage to doors and windows, some complete building failures, massive evacuation.",
+      "Catastrophic - Extensive damage to doors and windows, complete building failures, massive evacuation.",
   },
   {
     key:
@@ -20,10 +20,10 @@ const reports = [
     key:
       "Extensive - Large trees blown down, some structural damage to buildings",
   },
-  { key: "Moderate - Small trees down" },
+  { key: "Moderate - Small trees down, damage to temporary structures" },
   { key: "Minor - Damage to trees and foliage, low-lying roads flooded" },
 ];
-const colors = ["#1a237e", "#283593", "#3f51b5", "#7986cb", "#9fa8da"];
+const colors = ["#EC3E40", "#FF9B2B", "#F5D800", "#377FC7", "#01A46D"];
 
 export default class Visibility extends Component {
   constructor(props) {
@@ -71,16 +71,14 @@ const styles = StyleSheet.create({
   button: {
     alignItems: "flex-start",
     justifyContent: "center",
-    height: 110,
-    borderRadius: 10,
-    marginBottom: 10,
+    height: 98,
   },
   text: {
     padding: 5,
     alignItems: "stretch",
-    fontSize: 20,
+    fontSize: 22,
     fontFamily: "Arial",
-    color: "white",
+    color: "black",
     textAlign: "left",
   },
   questionText: {
