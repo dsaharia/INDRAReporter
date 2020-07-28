@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { TouchableOpacity, Text, Alert, StyleSheet, View} from "react-native";
 
-const url = 'https://indrareport.herokuapp.com/api/report/';
+const url = 'http://10.0.2.2:8000/api/add/';
 
 export default class SubmitButton extends Component {
     constructor(props) {
@@ -9,24 +9,27 @@ export default class SubmitButton extends Component {
     }
     sendData = ()  => {
         const data = {
-            latitude: this.props.data.latitude,
-            longitude: this.props.data.longitude,
-            timestamp: this.props.data.timestamp,
-            reporttype: this.props.data.reporttype,
+            lat: this.props.data.latitude,
+            lon: this.props.data.longitude,
+            category: this.props.data.category,
+            description: this.props.data.description,
+            description_id: this.props.data.description_id,
         }
-        // console.log(data)
+        console.log('ddd', JSON.stringify(data))
         fetch(url, {
                 method: 'POST',
                 headers: {
                      'Accept': 'application/json',
                     'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '127.0.0.1:8000'
+
                 },
                 body: JSON.stringify(data),
             })
-            .then(Alert.alert(" Thanks for your citizen science report! "))
-            // .then(response => response.json())
-            // .then(result => console.log(result))
-            .catch(error => Alert.alert(error))
+            // .then(Alert.alert(" Thanks for your citizen science report! "))
+            .then(response => response.json())
+            .then(result => console.log(result))
+            .catch(error =>console.log(error))
     }
     render() {
         return (
