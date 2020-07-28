@@ -33,7 +33,7 @@ export default class Rain extends Component {
     // console.log(this.props.navigation.state.params)
   }
   onSelect = (option) => {
-    this.props.navigation.state.params.selectReport(option);
+    this.props.navigation.state.params.selectReport("rain", "minimal", "a2", "re");
     this.props.navigation.goBack();
   };
   render() {
