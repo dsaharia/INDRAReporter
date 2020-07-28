@@ -25,15 +25,21 @@ export default class App extends Component {
             longitude: null,
             timestamp: null,
             error: null,
+            category: null,
+            description: null,
+            description_id: null,
             reporttype: null,
         };
 
     }
-    onReportSelect = (report) => {
+    onReportSelect = (category, description, description_id, report) => {
       this.setState({
-        reporttype: report
-      }, () => console.log("state:", this.state.reporttype))
-      console.log("Sent", report)
+        category: category,
+        description: description,
+        description_id: description_id,
+        reporttype: report,
+      })
+      console.log("Sent", this.state)
     }
 
     componentWillMount() {
