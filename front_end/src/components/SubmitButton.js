@@ -20,7 +20,8 @@ export default class SubmitButton extends Component {
                 method: 'POST',
                 headers: {
                      'Accept': 'application/json',
-                    'Content-Type': 'application/json',
+                    // 'Content-Type': 'application/json',
+                        'Content-Type': 'multipart/form-data',
                     'Access-Control-Allow-Origin': '127.0.0.1:8000'
 
                 },
@@ -29,7 +30,7 @@ export default class SubmitButton extends Component {
             // .then(Alert.alert(" Thanks for your citizen science report! "))
             .then(response => response.json())
             .then(result => console.log(result))
-            .catch(error =>console.log(error))
+            .catch(error =>console.log(JSON.stringify(error)))
     }
     render() {
         return (
