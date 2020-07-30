@@ -19,18 +19,16 @@ export default class SubmitButton extends Component {
         fetch(url, {
                 method: 'POST',
                 headers: {
-                     'Accept': 'application/json',
-                    // 'Content-Type': 'application/json',
-                        'Content-Type': 'multipart/form-data',
-                    'Access-Control-Allow-Origin': '127.0.0.1:8000'
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
 
                 },
                 body: JSON.stringify(data),
             })
             // .then(Alert.alert(" Thanks for your citizen science report! "))
             .then(response => response.json())
-            .then(result => console.log(result))
-            .catch(error =>console.log(JSON.stringify(error)))
+            .then(response_json => console.log(response_json))
+            .catch(error => console.log("ERROR: ", error.message))
     }
     render() {
         return (
