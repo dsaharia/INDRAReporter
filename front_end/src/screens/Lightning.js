@@ -8,10 +8,10 @@ import {
 } from "react-native";
 
 const reports = [
-  { key: "Cloud-to-Ground" },
-  { key: "Cloud-to-Cloud" },
-  { key: "Cloud-to-Air" },
-  { key: "Spider" },
+  { desc: "Cloud-to-Ground", desc_id: "G1" },
+  { desc: "Cloud-to-Cloud", desc_id: "G2"},
+  { desc: "Cloud-to-Air", desc_id: "G3"},
+  { desc: "Spider", desc_id: "G4"},
 ];
 const colors = ["#392A3D", "#63375B", "#A66384", "#CA8AA5"];
 
@@ -19,8 +19,8 @@ export default class Visibility extends Component {
   constructor(props) {
     super(props);
   }
-  onSelect = (option) => {
-    this.props.navigation.state.params.selectReport(option);
+  onSelect = (desc, desc_id) => {
+    this.props.navigation.state.params.selectReport("Lightning", desc, desc_id);
     this.props.navigation.goBack();
   };
   render() {
@@ -32,15 +32,16 @@ export default class Visibility extends Component {
 
         <FlatList
           data={reports}
+          keyExtractor={(item, index) => item.desc_id}
           renderItem={({ item, index }) => (
             <TouchableOpacity
               style={[
                 styles.button,
                 { backgroundColor: colors[index % colors.length] },
               ]}
-              onPress={() => this.onSelect(item.key)}
+              onPress={() => this.onSelect(item.desc, item.desc_id)}
             >
-              <Text style={styles.text}> {item.key}</Text>
+              <Text style={styles.text}> {item.desc}</Text>
             </TouchableOpacity>
           )}
         />
