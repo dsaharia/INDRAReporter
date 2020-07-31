@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
-const SelectedReport = (props) => (
+const SelectedReport = ({report}) => (
     <View style={styles.container}>
         <View style={styles.selectedReport}>
             <Text style={styles.selectedReportText}>Selected Report: </Text>
         </View>
         <View style={styles.reportType}>
-            <Text style={styles.reportText}> {props.report}</Text>
+            <Text style={styles.reportText}> {report.category} - {report.desc}</Text>
         </View>
     </View>
 );
