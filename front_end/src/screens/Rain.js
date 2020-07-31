@@ -18,13 +18,13 @@ const colors = [
 ];
 
 const rainData = [
-  { key: "No Rain" },
-  { key: "Light Rain (Drizzle)" },
-  { key: "Heavy Rain" },
-  { key: "Freezing Rain" },
-  { key: "Freezing Drizzle" },
-  { key: "Snow" },
-  { key: "Mixed Rain and Snow" },
+  { desc: "No Rain", desc_id: "a1" },
+  { desc: "Light Rain (Drizzle)", desc_id: "a2"},
+  { desc: "Heavy Rain", desc_id: "a3"},
+  { desc: "Freezing Rain", desc_id: "a4"},
+  { desc: "Freezing Drizzle", desc_id: "a5"},
+  { desc: "Snow", desc_id: "a6"},
+  { desc: "Mixed Rain and Snow", desc_id: "a7"},
 ];
 
 export default class Rain extends Component {
@@ -32,8 +32,9 @@ export default class Rain extends Component {
     super(props);
     // console.log(this.props.navigation.state.params)
   }
-  onSelect = (option) => {
-    this.props.navigation.state.params.selectReport("rain", "minimal", "a2", "re");
+  onSelect = (desc, desc_id) => {
+    console.log(desc, desc_id)
+    this.props.navigation.state.params.selectReport("Rain", desc, desc_id);
     this.props.navigation.goBack();
   };
   render() {
@@ -44,15 +45,16 @@ export default class Rain extends Component {
         </View>
         <FlatList
           data={rainData}
+          keyExtractor={(item, index) => item.desc_id}
           renderItem={({ item, index }) => (
             <TouchableOpacity
               style={[
                 styles.button,
                 { backgroundColor: colors[index % colors.length] },
               ]}
-              onPress={() => this.onSelect(item.key)}
+              onPress={() => this.onSelect(item.desc, item.desc_id)}
             >
-              <Text style={styles.rainText}>{item.key}</Text>
+              <Text style={styles.rainText}>{item.desc}</Text>
             </TouchableOpacity>
           )}
         />
