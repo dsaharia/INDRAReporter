@@ -28,18 +28,16 @@ export default class App extends Component {
             category: null,
             description: null,
             description_id: null,
-            reporttype: null,
         };
 
     }
-    onReportSelect = (category, description, description_id, report) => {
+    onReportSelect = (category, description, description_id) => {
       this.setState({
         category: category,
         description: description,
         description_id: description_id,
-        reporttype: report,
       })
-      console.log("Sent", this.state)
+      console.log("State: ", this.state)
     }
 
     componentWillMount() {
@@ -82,7 +80,7 @@ export default class App extends Component {
           location={this.state}
           selectReport={() => this.onReportSelect}
           />}
-         <SelectedReport report={this.state.reporttype} />
+         <SelectedReport report={{category: this.state.category, desc: this.state.description}} />
          <View style={styles.mapContainer}>
          {this.state.loc &&
                 <MapView
