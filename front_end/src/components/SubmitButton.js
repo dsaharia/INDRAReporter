@@ -15,7 +15,7 @@ export default class SubmitButton extends Component {
             description: this.props.data.description,
             description_id: this.props.data.description_id,
         }
-        console.log('ddd', JSON.stringify(data))
+        // console.log('ddd', JSON.stringify(data))
         fetch(url, {
                 method: 'POST',
                 headers: {
@@ -25,10 +25,22 @@ export default class SubmitButton extends Component {
                 },
                 body: JSON.stringify(data),
             })
-            // .then(Alert.alert(" Thanks for your citizen science report! "))
-            .then(response => response.json())
-            .then(response_json => console.log(response_json))
-            .catch(error => console.log("ERROR: ", error.message))
+            .then(response => {
+                // console.log(response); 
+                if (!response.ok) {
+                    throw new Error(`code ${response.status}`)
+                }
+                
+                return response.json()
+            })
+            .then(response_json => {
+                Alert.alert(" Thanks for your citizen science report! ")
+                console.log(response_json.message)
+            })
+            .catch(error => {
+                Alert.alert("Could not send report. Try again later.")
+                console.log(error)
+            })
     }
     render() {
         return (
