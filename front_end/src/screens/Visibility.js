@@ -10,18 +10,18 @@ import {
 const colors = ["#29b6f6", "#039be5"];
 
 const reports = [
-  { key: "Light Fog" },
-  { key: "Dense Fog" },
-  { key: "Smog/Air Pollution" },
-  { key: "Blowing Dust" },
-  { key: "Blowing Snow" },
+  { desc: "Light Fog", desc_id: "d1" },
+  { desc: "Dense Fog", desc_id: "d2"},
+  { desc: "Smog/Air Pollution", desc_id: "d3"},
+  { desc: "Blowing Dust", desc_id: "d4"},
+  { desc: "Blowing Snow", desc_id: "d5"},
 ];
 export default class Visibility extends Component {
   constructor(props) {
     super(props);
   }
-  onSelect = (option) => {
-    this.props.navigation.state.params.selectReport(option);
+  onSelect = (desc, desc_id) => {
+    this.props.navigation.state.params.selectReport("Visibility", desc, desc_id);
     this.props.navigation.goBack();
   };
 
@@ -34,15 +34,16 @@ export default class Visibility extends Component {
 
         <FlatList
           data={reports}
+          keyExtractor={(item, index) => item.desc_id}
           renderItem={({ item, index }) => (
             <TouchableOpacity
               style={[
                 styles.button,
                 { backgroundColor: colors[index % colors.length] },
               ]}
-              onPress={() => this.onSelect(item.key)}
+              onPress={() => this.onSelect(item.desc, item.desc_id)}
             >
-              <Text style={styles.text}> {item.key}</Text>
+              <Text style={styles.text}> {item.desc}</Text>
             </TouchableOpacity>
           )}
         />
