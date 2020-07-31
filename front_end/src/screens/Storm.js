@@ -9,19 +9,31 @@ import {
 
 const reports = [
   {
-    key:
+    desc_full:
       "Catastrophic - Extensive damage to doors and windows, complete building failures, massive evacuation.",
+    desc: "Catastrophic",
+    desc_id: "f1"
   },
   {
-    key:
+    desc_full:
       "Extreme - Failure of roofs, major erosion, evacuation near the sea-shore.",
+    desc: "Extreme",
+    desc_id: "f2"
   },
   {
-    key:
+    desc_full:
       "Extensive - Large trees blown down, some structural damage to buildings",
+    desc: "Extensive",
+    desc_id: "f3"
   },
-  { key: "Moderate - Small trees down, damage to temporary structures" },
-  { key: "Minor - Damage to trees and foliage, low-lying roads flooded" },
+  { desc_full: "Moderate - Small trees down, damage to temporary structures",
+    desc: "Moderate",
+    desc_id: "f4"
+  },
+  { desc_full: "Minor - Damage to trees and foliage, low-lying roads flooded", 
+    desc: "Minor",
+    desc_id: "f5"
+  },
 ];
 const colors = ["#EC3E40", "#FF9B2B", "#F5D800", "#377FC7", "#01A46D"];
 
@@ -30,8 +42,8 @@ export default class Visibility extends Component {
     super(props);
     // console.log(this.props.navigation.state.params)
   }
-  onSelect = (option) => {
-    this.props.navigation.state.params.selectReport(option);
+  onSelect = (desc, desc_id) => {
+    this.props.navigation.state.params.selectReport("Storm", desc, desc_id);
     this.props.navigation.goBack();
   };
 
@@ -44,15 +56,16 @@ export default class Visibility extends Component {
 
         <FlatList
           data={reports}
+          keyExtractor={(item, index) => item.desc_id}
           renderItem={({ item, index }) => (
             <TouchableOpacity
               style={[
                 styles.button,
                 { backgroundColor: colors[index % colors.length] },
               ]}
-              onPress={() => this.onSelect(item.key)}
+              onPress={() => this.onSelect(item.desc, item.desc_id)}
             >
-              <Text style={styles.text}> {item.key}</Text>
+              <Text style={styles.text}> {item.desc_full}</Text>
             </TouchableOpacity>
           )}
         />
