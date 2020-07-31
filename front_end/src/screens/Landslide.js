@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 import { Text, TouchableOpacity, View, FlatList, StyleSheet } from 'react-native';
 
 const reports = [
-    { key: "Landslide" },
-    { key: "Mudslide" },
-    { key: "Debris flow" },
-    { key: "Rock fall" },
-    { key: "Translational slide" },
-    { key: "Rotational slide" },
-    { key: "Complex" },
-    { key: "Topple" },
-    { key: "Riverbank collapse" },
-    { key: "Lahar" },
-    { key: "Earth flow" },
-    { key: "Snow avalanche" },
-    { key: "Creep" },
+    { desc: "Landslide", desc_id: "c1" },
+    { desc: "Mudslide", desc_id: "c2" },
+    { desc: "Debris flow", desc_id: "c3" },
+    { desc: "Rock fall", desc_id: "c4" },
+    { desc: "Translational slide", desc_id: "c5" },
+    { desc: "Rotational slide", desc_id: "c6" },
+    { desc: "Complex", desc_id: "c7" },
+    { desc: "Topple", desc_id: "c8" },
+    { desc: "Riverbank collapse", desc_id: "c9" },
+    { desc: "Lahar", desc_id: "c10" },
+    { desc: "Earth flow", desc_id: "c11" },
+    { desc: "Snow avalanche", desc_id: "c12" },
+    { desc: "Creep", desc_id: "c13" },
 
 ]
 const colors = ['#29b6f6', '#039be5']
@@ -23,8 +23,8 @@ export default class Landslide extends Component {
     constructor(props){
         super(props);
     }
-    onSelect = (option) => {
-        this.props.navigation.state.params.selectReport(option);
+    onSelect = (desc, desc_id) => {
+        this.props.navigation.state.params.selectReport("Landslide", desc, desc_id);
         this.props.navigation.goBack();
     }
     render() {
@@ -36,11 +36,12 @@ export default class Landslide extends Component {
 
                 <FlatList 
                 data = {reports}
+                keyExtractor={(item, index) => item.desc_id}
                 renderItem = {
                     ({item, index}) => <TouchableOpacity
                     style = {[styles.button, {backgroundColor: colors[index % colors.length]}]}
-                    onPress = {() => this.onSelect(item.key)} >
-                        <Text style={styles.text}> {item.key}</Text>
+                    onPress = {() => this.onSelect(item.desc, item.desc_id)} >
+                        <Text style={styles.text}> {item.desc}</Text>
                     </TouchableOpacity>
                 }
                 />
