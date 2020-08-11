@@ -9,9 +9,9 @@ import {
 
 const reports = [
   { desc: "Cloud-to-Ground", desc_id: "G1" },
-  { desc: "Cloud-to-Cloud", desc_id: "G2"},
-  { desc: "Cloud-to-Air", desc_id: "G3"},
-  { desc: "Spider", desc_id: "G4"},
+  { desc: "Cloud-to-Cloud", desc_id: "G2" },
+  { desc: "Cloud-to-Air", desc_id: "G3" },
+  { desc: "Spider", desc_id: "G4" },
 ];
 const colors = ["#392A3D", "#63375B", "#A66384", "#CA8AA5"];
 
