@@ -11,17 +11,21 @@ const colors = ["#29b6f6", "#039be5"];
 
 const reports = [
   { desc: "Light Fog", desc_id: "d1" },
-  { desc: "Dense Fog", desc_id: "d2"},
-  { desc: "Smog/Air Pollution", desc_id: "d3"},
-  { desc: "Blowing Dust", desc_id: "d4"},
-  { desc: "Blowing Snow", desc_id: "d5"},
+  { desc: "Dense Fog", desc_id: "d2" },
+  { desc: "Smog/Air Pollution", desc_id: "d3" },
+  { desc: "Blowing Dust", desc_id: "d4" },
+  { desc: "Blowing Snow", desc_id: "d5" },
 ];
 export default class Visibility extends Component {
   constructor(props) {
     super(props);
   }
   onSelect = (desc, desc_id) => {
-    this.props.navigation.state.params.selectReport("Visibility", desc, desc_id);
+    this.props.navigation.state.params.selectReport(
+      "Visibility",
+      desc,
+      desc_id
+    );
     this.props.navigation.goBack();
   };
 
