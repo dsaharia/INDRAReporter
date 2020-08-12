@@ -8,9 +8,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 import VerticalSlider from "rn-vertical-slider";
-import { SubmitButton } from "../components/SubmitButton";
 
-const url = "https://indrareport.herokuapp.com/api/report/";
+const url = "http://indrareport.herokuapp.com/api/add/";
 
 export default class FloodLevel extends Component {
   constructor(props) {
@@ -18,24 +17,28 @@ export default class FloodLevel extends Component {
     const {
       lat,
       long,
-      timestamp,
-      floodOption,
+      category,
+      description,
+      description_id,
     } = this.props.navigation.state.params;
-    console.log(lat, long, timestamp);
+
     this.state = {
       sliderVal: 0,
       lat: lat,
       long: long,
-      timestamp: timestamp,
-      floodOption: floodOption,
+      category: category,
+      description: description,
+      description_id: description_id,
     };
   }
   onSubmission = () => {
     const data = {
-      latitude: this.state.lat,
-      longitude: this.state.long,
-      timestamp: this.state.timestamp,
-      reporttype: `${this.state.floodOption}/${this.state.sliderVal}`,
+      lat: this.state.lat,
+      lon: this.state.long,
+      category: this.state.category,
+      description: this.state.description,
+      description_id: this.state.description_id,
+      obsval: this.state.sliderVal,
     };
     fetch(url, {
       method: "POST",
@@ -67,23 +70,23 @@ export default class FloodLevel extends Component {
         >
           <View style={styles.sliderContainer}>
             <VerticalSlider
-              value={0.25}
+              value={0}
               disabled={false}
               min={0}
-              max={3}
-              // onChange={(value: number) => {
-              //   console.log("CHANGE", value);
-              // }}
-              onComplete={(value) => {
-                // Alert.alert(JSON.stringify(value))
+              max={3.6}
+              onChange={(value: number) => {
                 this.setState({
-                  sliderVal: value,
+                  sliderVal: value.toFixed(2),
                 });
-                console.log(this.state);
               }}
-              width={250}
+              onComplete={(value) => {
+                this.setState({
+                  sliderVal: value.toFixed(2),
+                });
+              }}
+              width={500}
               height={385}
-              step={1}
+              step={0.1}
               borderRadius={1}
               minimumTrackTintColor="#42A5F5"
               maximumTrackTintColor="transparent"
@@ -94,7 +97,7 @@ export default class FloodLevel extends Component {
           </View>
         </ImageBackground>
         <View style={styles.value}>
-          <Text style={{ fontSize: 21 }}>
+          <Text style={{ fontSize: 21, color: "black" }}>
             Water level: {this.state.sliderVal} meters/
             {(this.state.sliderVal * 3.281).toFixed(2)} foot
           </Text>
@@ -112,11 +115,13 @@ export default class FloodLevel extends Component {
 
 const styles = StyleSheet.create({
   sliderContainer: {
+    flex: 1,
     position: "absolute",
     left: "2%",
     bottom: "3%",
     // paddingTop: 140,
     // paddingBottom: 220,
+    width: "100%",
     backgroundColor: "transparent",
     borderWidth: 1,
   },
@@ -129,8 +134,8 @@ const styles = StyleSheet.create({
   },
   imageStyle: {
     position: "absolute",
-    width: "68%",
-    height: "68%",
+    width: "65%",
+    height: "70%",
     left: "16%",
     bottom: "21%",
     // paddingRight: 50,
@@ -160,9 +165,10 @@ const styles = StyleSheet.create({
   },
   value: {
     position: "absolute",
-    bottom: "12%",
-    left: "6%",
+    bottom: "14%",
+    left: "13%",
     alignItems: "center",
+    justifyContent: "center",
   },
   headerContainer: {
     paddingBottom: 20,
@@ -171,5 +177,6 @@ const styles = StyleSheet.create({
   questionText: {
     fontSize: 18,
     textAlign: "center",
+    color: "black",
   },
 });
