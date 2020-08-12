@@ -19,12 +19,12 @@ const colors = [
 
 const rainData = [
   { desc: "No Rain", desc_id: "a1" },
-  { desc: "Light Rain (Drizzle)", desc_id: "a2"},
-  { desc: "Heavy Rain", desc_id: "a3"},
-  { desc: "Freezing Rain", desc_id: "a4"},
-  { desc: "Freezing Drizzle", desc_id: "a5"},
-  { desc: "Snow", desc_id: "a6"},
-  { desc: "Mixed Rain and Snow", desc_id: "a7"},
+  { desc: "Light Rain (Drizzle)", desc_id: "a2" },
+  { desc: "Heavy Rain", desc_id: "a3" },
+  { desc: "Freezing Rain", desc_id: "a4" },
+  { desc: "Freezing Drizzle", desc_id: "a5" },
+  { desc: "Snow", desc_id: "a6" },
+  { desc: "Mixed Rain and Snow", desc_id: "a7" },
 ];
 
 export default class Rain extends Component {
@@ -33,7 +33,7 @@ export default class Rain extends Component {
     // console.log(this.props.navigation.state.params)
   }
   onSelect = (desc, desc_id) => {
-    console.log(desc, desc_id)
+    console.log(desc, desc_id);
     this.props.navigation.state.params.selectReport("Rain", desc, desc_id);
     this.props.navigation.goBack();
   };
