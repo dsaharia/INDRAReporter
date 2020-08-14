@@ -14,6 +14,7 @@ export default class SubmitButton extends Component {
       category: this.props.data.category,
       description: this.props.data.description,
       description_id: this.props.data.description_id,
+      obsval: 0,
     };
     // console.log('ddd', JSON.stringify(data))
     fetch(url, {
@@ -69,6 +70,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     fontSize: 20,
     color: "white",
-    fontFamily: "Arial",
+    fontFamily: "fantasy",
+    // fontFamily: "Arial",
   },
 });
