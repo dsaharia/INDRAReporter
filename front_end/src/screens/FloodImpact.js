@@ -42,12 +42,13 @@ export default class FloodImpact extends Component {
     super(props);
     // console.log(this.props.navigation.state.params)
   }
-  onSelect = (option) => {
+  onSelect = (desc, desc_id) => {
     this.props.navigation.navigate("FloodLevel", {
       lat: this.props.navigation.state.params.lat,
       long: this.props.navigation.state.params.long,
-      timestamp: this.props.navigation.state.params.timestamp,
-      floodOption: option,
+      category: "Flood",
+      description: desc,
+      description_id: desc_id,
     });
   };
 
@@ -60,6 +61,7 @@ export default class FloodImpact extends Component {
 
         <FlatList
           data={reports}
+          keyExtractor={(item, index) => item.desc_id}
           renderItem={({ item, index }) => (
             <TouchableOpacity
               style={[
