@@ -90,14 +90,14 @@ const styles = StyleSheet.create({
   },
   text: {
     padding: 5,
-    alignItems: "stretch",
-    fontSize: 22,
-    fontFamily: "Arial",
+    fontSize: 20,
+    fontFamily: "Montserrat-Medium",
     color: "black",
     textAlign: "left",
   },
   questionText: {
-    fontSize: 30,
+    fontFamily: "Montserrat-Bold",
+    fontSize: 25,
   },
   headerContainer: {
     alignItems: "center",
