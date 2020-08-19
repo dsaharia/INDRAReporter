@@ -148,10 +148,10 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
   },
   text: {
-    fontWeight: "bold",
-    color: "red",
-    fontSize: 13,
-    fontFamily: "Arial",
+    // fontWeight: "bold",
+    color: "#033d61",
+    fontSize: 14,
+    fontFamily: "Montserrat-SemiBold",
     textAlign: "center",
     justifyContent: "space-evenly", //important
     paddingTop: 5,
