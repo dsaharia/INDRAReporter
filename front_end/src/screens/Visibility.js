@@ -72,18 +72,19 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   text: {
-    fontSize: 30,
-    fontFamily: "Arial",
+    fontSize: 23,
+    fontFamily: "Montserrat-Medium",
     color: "white",
   },
   questionText: {
-    fontSize: 30,
+    fontFamily: "Montserrat-Bold",
+    fontSize: 27,
   },
   headerContainer: {
     alignItems: "center",
     justifyContent: "center",
     padding: 10,
     paddingBottom: 25,
-    paddingTop: 30,
+    paddingTop: 25,
   },
 });
