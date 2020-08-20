@@ -79,11 +79,12 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   rainText: {
-    fontSize: 25,
-    fontFamily: "Arial",
+    fontSize: 23,
+    fontFamily: "Montserrat-Medium",
     color: "white",
   },
   headerText: {
+    fontFamily: "Montserrat-Bold",
     fontSize: 30,
   },
   headerContainer: {
