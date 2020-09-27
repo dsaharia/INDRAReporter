@@ -6,10 +6,13 @@ import {
   StyleSheet,
   View,
   TouchableOpacity,
+  Dimensions,
 } from "react-native";
 import VerticalSlider from "rn-vertical-slider";
 
 const url = "http://indrareport.herokuapp.com/api/add/";
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
 
 export default class FloodLevel extends Component {
   constructor(props) {
@@ -84,8 +87,8 @@ export default class FloodLevel extends Component {
                   sliderVal: value.toFixed(2),
                 });
               }}
-              width={500}
-              height={385}
+              width={200}
+              height={370}
               step={0.1}
               borderRadius={1}
               minimumTrackTintColor="#42A5F5"
@@ -97,7 +100,13 @@ export default class FloodLevel extends Component {
           </View>
         </ImageBackground>
         <View style={styles.value}>
-          <Text style={{ fontSize: 21, color: "black" }}>
+          <Text
+            style={{
+              fontSize: 20,
+              color: "black",
+              fontFamily: "Montserrat-Medium",
+            }}
+          >
             Water level: {this.state.sliderVal} meters/
             {(this.state.sliderVal * 3.281).toFixed(2)} foot
           </Text>
@@ -114,21 +123,18 @@ export default class FloodLevel extends Component {
 }
 
 const styles = StyleSheet.create({
-  sliderContainer: {
-    flex: 1,
-    position: "absolute",
-    left: "2%",
-    bottom: "3%",
-    // paddingTop: 140,
-    // paddingBottom: 220,
-    width: "100%",
-    backgroundColor: "transparent",
-    borderWidth: 1,
-  },
+  // sliderContainer: {
+  //   // flex: 1,
+  //   position: "absolute",
+  //   left: "1%",
+  //   bottom: "3%",
+  //   // paddingTop: 140,
+  //   // paddingBottom: 220,
+  //   width: "100%",
+  //   backgroundColor: "transparent",
+  //   borderWidth: 10,
+  // },
   container: {
-    // padding: 14,
-    // justifyContent: 'center',
-    // alignItems: 'center',
     backgroundColor: "#b3e5fc",
     flex: 1,
   },
@@ -161,21 +167,22 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     fontSize: 20,
     color: "white",
-    fontFamily: "Arial",
+    fontFamily: "Montserrat-Bold",
   },
   value: {
     position: "absolute",
-    bottom: "14%",
-    left: "13%",
-    alignItems: "center",
-    justifyContent: "center",
+    // bottom: "14%",
+    bottom: 80,
+    left: 15,
   },
   headerContainer: {
-    paddingBottom: 20,
+    paddingBottom: 10,
     paddingTop: 10,
+    marginBottom: 20,
   },
   questionText: {
-    fontSize: 18,
+    fontSize: 15,
+    fontFamily: "Montserrat-Bold",
     textAlign: "center",
     color: "black",
   },

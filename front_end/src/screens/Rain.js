@@ -74,18 +74,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#1e88e5",
-    height: 60,
+    height: 50,
     borderRadius: 10,
     marginBottom: 10,
   },
   rainText: {
-    fontSize: 23,
+    fontSize: 20,
     fontFamily: "Montserrat-Medium",
     color: "white",
   },
   headerText: {
     fontFamily: "Montserrat-Bold",
-    fontSize: 30,
+    fontSize: 20,
   },
   headerContainer: {
     alignItems: "center",

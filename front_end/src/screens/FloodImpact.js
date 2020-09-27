@@ -12,27 +12,28 @@ const reports = [
     desc_full:
       "SEVERE - Large scale evacuation of people. Permanent houses and vehicles swept away",
     desc: "SEVERE",
-    desc_id: "b1"
+    desc_id: "b1",
   },
   {
     desc_full:
       "MAJOR -  Affecting communities. Flooded roads, stranded vehicles, and inundated houses.",
     desc: "MAJOR",
-    desc_id: "b2"
+    desc_id: "b2",
   },
-  { desc_full: "MODERATE - Flooded roads. Disruption of travel to flooding sites",
+  {
+    desc_full:
+      "MODERATE - Flooded roads. Disruption of travel to flooding sites",
     desc: "MODERATE",
-    desc_id: "b3" },
+    desc_id: "b3",
+  },
 
   {
     desc_full:
       "MINOR - Flooding in low-lying areas, some inconvenience to the public.",
     desc: "MINOR",
-    desc_id: "b4"
+    desc_id: "b4",
   },
-  { desc_full: "NONE - No flooding observed", 
-    desc: "NONE",
-    desc_id: "b5"},
+  { desc_full: "NONE - No flooding observed", desc: "NONE", desc_id: "b5" },
 ];
 
 const colors = ["#EC3E40", "#FF9B2B", "#F5D800", "#377FC7", "#01A46D"];
@@ -94,14 +95,15 @@ const styles = StyleSheet.create({
     height: 94,
   },
   text: {
-    fontSize: 22,
-    fontFamily: "Arial",
+    fontSize: 20,
+    fontFamily: "Montserrat-Medium",
     color: "black",
     textAlign: "left",
     padding: 5,
   },
   questionText: {
-    fontSize: 25,
+    fontFamily: "Montserrat-Bold",
+    fontSize: 20,
   },
   headerContainer: {
     alignItems: "center",
