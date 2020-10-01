@@ -66,7 +66,6 @@ export default class FloodLevel extends Component {
             person.
           </Text>
         </View>
-
         <ImageBackground
           source={require("./final.png")}
           style={styles.imageStyle}
@@ -99,6 +98,7 @@ export default class FloodLevel extends Component {
             />
           </View>
         </ImageBackground>
+
         <View style={styles.value}>
           <Text
             style={{
@@ -111,7 +111,6 @@ export default class FloodLevel extends Component {
             {(this.state.sliderVal * 3.281).toFixed(2)} foot
           </Text>
         </View>
-
         <View style={styles.submitButton}>
           <TouchableOpacity onPress={() => this.onSubmission()}>
             <Text style={styles.text}>Submit Report</Text>
@@ -139,12 +138,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   imageStyle: {
-    backgroundColor: "red",
     position: "absolute",
-    width: 200,
-    height: 400,
-    // left: "16%",
-    // bottom: "21%",
+    width: 250,
+    height: 390,
+    left: "14%",
+    bottom: "21%",
     // paddingRight: 50,
     // paddingBottom: 50,
     // paddingTop: 10,
