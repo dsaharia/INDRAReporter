@@ -24,3 +24,12 @@ All notable changes to this project will be documented in this file.
 ## 0.0.3 - 2020-05-07
 ### Changed App Name
 - Changed Name to INDRA Reporter
+
+## 0.1.0 - 2020-10-1
+- Flood Impact and Flood Level merged into Flooding.
+- Schema updated with full geoJSON support with postGIS extension.
+- Slider CSS updated.
+- UI - New Font, New list views, New color scheme.
+- New Logo, banner image.
+
+
