@@ -87,7 +87,7 @@ export default class FloodLevel extends Component {
                   sliderVal: value.toFixed(2),
                 });
               }}
-              width={200}
+              width={250}
               height={370}
               step={0.1}
               borderRadius={1}
@@ -123,27 +123,28 @@ export default class FloodLevel extends Component {
 }
 
 const styles = StyleSheet.create({
-  // sliderContainer: {
-  //   // flex: 1,
-  //   position: "absolute",
-  //   left: "1%",
-  //   bottom: "3%",
-  //   // paddingTop: 140,
-  //   // paddingBottom: 220,
-  //   width: "100%",
-  //   backgroundColor: "transparent",
-  //   borderWidth: 10,
-  // },
+  sliderContainer: {
+    // flex: 1,
+    position: "absolute",
+    left: "1%",
+    bottom: "3%",
+    // paddingTop: 140,
+    // paddingBottom: 220,
+    // width: "100%",
+    backgroundColor: "transparent",
+    borderWidth: 1,
+  },
   container: {
     backgroundColor: "#b3e5fc",
     flex: 1,
   },
   imageStyle: {
+    backgroundColor: "red",
     position: "absolute",
-    width: "65%",
-    height: "70%",
-    left: "16%",
-    bottom: "21%",
+    width: 200,
+    height: 400,
+    // left: "16%",
+    // bottom: "21%",
     // paddingRight: 50,
     // paddingBottom: 50,
     // paddingTop: 10,
