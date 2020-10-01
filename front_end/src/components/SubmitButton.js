@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     fontSize: 20,
     color: "white",
-    fontFamily: "fantasy",
+    fontFamily: "Montserrat-Bold",
     // fontFamily: "Arial",
   },
 });

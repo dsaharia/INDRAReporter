@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Dimensions } from "react-native";
+
+const windowWidth = Dimensions.get("window").width;
 
 const SelectedReport = ({ report }) => (
   <View style={styles.container}>
@@ -26,21 +28,20 @@ const styles = StyleSheet.create({
     color: "#12355B",
   },
   reportText: {
-    fontFamily: "fantasy",
+    fontFamily: "Montserrat-SemiBold",
     fontSize: 15,
     color: "white",
-    paddingLeft: 2,
+    // paddingLeft: 2,
     textAlign: "left",
   },
   reportType: {
     backgroundColor: "#093F61",
-    paddingTop: 13,
+    paddingTop: 5,
     paddingLeft: 8,
-    paddingBottom: 13,
-    paddingRight: 15,
+    paddingBottom: 5,
     left: 11,
     bottom: 3,
-    width: "59%",
+    width: windowWidth - 170,
     borderRadius: 5,
   },
   selectedReport: {
