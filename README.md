@@ -15,5 +15,5 @@ For the app, the following technologies were used
 
 <img src="./figures/indra_wireframe_v1.gif"/>
 
-![App Screens](./figures/panelscreeshots.png?raw=true )
+![App Screens](./figures/panelscreeshots.png)
 
