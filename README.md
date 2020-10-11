@@ -9,16 +9,10 @@ Please Email us if you have ideas for collaboration and improvement.
 <img src="./figures/indra_wireframe_v1.gif"/>
 
 # Screenshots
-<img src="./figures/Screenshots/main.jpg"/>
+![App Screens](./figures/Screenshots/panelscreeshots.png?raw=true )
 
 # Tech Stack
 * Front-end - React-native
 * Back-end - Django with GeoJSON.
 * Database - PostgreSQL with PostGIS extension.
 * Deployment - Heroku
-
-# Team Project INDRA
-* Mr. Dhiraj Saharia (B.Tech. Student, Tezpur University), dsaharia@outlook.com
-* Mr. Satyakam Singhal (B.Tech. Student, Indian Institute of Technology Delhi)
-* Mr. Avish Jain (B.Tech. Student, Indian Institute of Technology Delhi)
-* Dr. Manabendra Saharia (Assistant Professor, IIT Delhi, msaharia@iitd.ac.in)
