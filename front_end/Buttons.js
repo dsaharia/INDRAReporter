@@ -60,45 +60,6 @@ export default class Buttons extends Component {
             ></ImageBackground>
             <Text style={styles.text}>Flooding</Text>
           </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => {
-              this.props.navigation.navigate("Landslide", {
-                selectReport: this.props.selectReport(),
-              });
-            }}
-            style={styles.button}
-          >
-            <ImageBackground
-              source={require("./icons/landslide.png")}
-              style={styles.image}
-            ></ImageBackground>
-            <Text style={styles.text}>Landslide</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => {
-              this.props.navigation.navigate("Visibility", {
-                selectReport: this.props.selectReport(),
-              });
-            }}
-          >
-            <ImageBackground
-              source={require("./icons/visibility.png")}
-              style={styles.image}
-            ></ImageBackground>
-            <Text style={styles.text}>Visibility</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button}>
-            <ImageBackground
-              source={require("./icons/earthquake.png")}
-              style={styles.image}
-            ></ImageBackground>
-            <Text style={styles.text}>Earthquake</Text>
-          </TouchableOpacity>
-
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
@@ -127,6 +88,44 @@ export default class Buttons extends Component {
               style={styles.image}
             ></ImageBackground>
             <Text style={styles.text}>Lightning</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => {
+              this.props.navigation.navigate("Visibility", {
+                selectReport: this.props.selectReport(),
+              });
+            }}
+          >
+            <ImageBackground
+              source={require("./icons/visibility.png")}
+              style={styles.image}
+            ></ImageBackground>
+            <Text style={styles.text}>Visibility</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => {
+              this.props.navigation.navigate("Landslide", {
+                selectReport: this.props.selectReport(),
+              });
+            }}
+            style={styles.button}
+          >
+            <ImageBackground
+              source={require("./icons/landslide.png")}
+              style={styles.image}
+            ></ImageBackground>
+            <Text style={styles.text}>Landslide</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.button}>
+            <ImageBackground
+              source={require("./icons/earthquake.png")}
+              style={styles.image}
+            ></ImageBackground>
+            <Text style={styles.text}>Earthquake</Text>
           </TouchableOpacity>
         </View>
       </View>
