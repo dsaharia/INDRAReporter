@@ -22,7 +22,7 @@ const reports = [
   { desc: "Snow avalanche", desc_id: "c12" },
   { desc: "Creep", desc_id: "c13" },
 ];
-const colors = ["#29b6f6", "#039be5"];
+const colors = ["#0AA4A2", "#27D0D7"];
 
 export default class Landslide extends Component {
   constructor(props) {
@@ -70,12 +70,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#1e88e5",
-    height: 60,
+    height: 50,
     borderRadius: 10,
     marginBottom: 10,
   },
   text: {
-    fontSize: 21,
+    fontSize: 20,
     fontFamily: "Montserrat-Medium",
     color: "white",
   },

@@ -13,7 +13,8 @@ const reports = [
   { desc: "Cloud-to-Air", desc_id: "G3" },
   { desc: "Spider", desc_id: "G4" },
 ];
-const colors = ["#392A3D", "#63375B", "#A66384", "#CA8AA5"];
+// const colors = ["#392A3D", "#63375B", "#A66384", "#CA8AA5"];
+const colors = ["#0AA4A2", "#27D0D7"];
 
 export default class Visibility extends Component {
   constructor(props) {
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#1e88e5",
-    height: 60,
+    height: 50,
     borderRadius: 10,
     marginBottom: 10,
   },

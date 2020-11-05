@@ -95,11 +95,11 @@ const styles = StyleSheet.create({
     height: 94,
   },
   text: {
-    fontSize: 20,
+    fontSize: 19,
     fontFamily: "Montserrat-Medium",
     color: "black",
     textAlign: "left",
-    padding: 5,
+    padding: 4,
   },
   questionText: {
     fontFamily: "Montserrat-Bold",
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     alignItems: "center",
     justifyContent: "center",
-    paddingBottom: 30,
-    paddingTop: 30,
+    paddingBottom: 25,
+    paddingTop: 25,
   },
 });

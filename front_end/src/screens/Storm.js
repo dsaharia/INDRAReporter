@@ -10,7 +10,7 @@ import {
 const reports = [
   {
     desc_full:
-      "Catastrophic - Extensive damage to doors and windows, complete building failures, massive evacuation.",
+      "Catastrophic - Damage to doors and windows, building failures with massive evacuation.",
     desc: "Catastrophic",
     desc_id: "f1",
   },
@@ -53,7 +53,7 @@ export default class Visibility extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.headerContainer}>
-          <Text style={styles.questionText}> What are you seeing?</Text>
+          <Text style={styles.questionText}> What are you experiencing?</Text>
         </View>
 
         <FlatList
@@ -86,18 +86,18 @@ const styles = StyleSheet.create({
   button: {
     alignItems: "flex-start",
     justifyContent: "center",
-    height: 98,
+    height: 95,
   },
   text: {
-    padding: 5,
-    fontSize: 20,
+    padding: 4,
+    fontSize: 19,
     fontFamily: "Montserrat-Medium",
     color: "black",
     textAlign: "left",
   },
   questionText: {
     fontFamily: "Montserrat-Bold",
-    fontSize: 25,
+    fontSize: 20,
   },
   headerContainer: {
     alignItems: "center",

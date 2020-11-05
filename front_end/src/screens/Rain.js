@@ -7,15 +7,7 @@ import {
   FlatList,
 } from "react-native";
 
-const colors = [
-  "#91cfe6",
-  "#8abccf",
-  "#73a2c6",
-  "#5d8abd",
-  "#4771b2",
-  "#2e59a8",
-  "#00429d",
-];
+const colors = ["#0AA4A2", "#27D0D7"];
 
 const rainData = [
   { desc: "No Rain", desc_id: "a1" },
@@ -85,13 +77,13 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontFamily: "Montserrat-Bold",
-    fontSize: 20,
+    fontSize: 25,
   },
   headerContainer: {
     alignItems: "center",
     justifyContent: "center",
     padding: 10,
-    paddingBottom: 30,
-    paddingTop: 30,
+    paddingBottom: 25,
+    paddingTop: 25,
   },
 });

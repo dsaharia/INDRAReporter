@@ -7,7 +7,8 @@ import {
   StyleSheet,
 } from "react-native";
 
-const colors = ["#29b6f6", "#039be5"];
+// const colors = ["#29b6f6", "#039be5"];
+const colors = ["#0AA4A2", "#27D0D7"];
 
 const reports = [
   { desc: "Light Fog", desc_id: "d1" },
@@ -33,7 +34,7 @@ export default class Visibility extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.headerContainer}>
-          <Text style={styles.questionText}> What kind of report?</Text>
+          <Text style={styles.questionText}> What are you seeing?</Text>
         </View>
 
         <FlatList
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#1e88e5",
-    height: 60,
+    height: 50,
     borderRadius: 10,
     marginBottom: 10,
   },
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
   },
   questionText: {
     fontFamily: "Montserrat-Bold",
-    fontSize: 27,
+    fontSize: 25,
   },
   headerContainer: {
     alignItems: "center",
