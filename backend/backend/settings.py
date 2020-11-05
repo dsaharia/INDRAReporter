@@ -13,7 +13,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['SECRET_VALUE']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
 ]
 
 MIDDLEWARE = [
@@ -68,27 +69,33 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 # DATABASES = {
-#         'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'dckta4rrc7vu06',
-#         'USER': '',
-#         'PASSWORD': ,
-#         'HOST': ,
-#         'PORT': ,
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
 
+DATABASES = { 'default': dj_database_url.config() }
 
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+# For GDAL Library from heroku environment
+GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
+GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
+# DATABASES = {
+#         'default': {
+#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#         'NAME': 'indraDBv2',
+#         'USER': 'dhirajsaharia',
+#         'HOST': "localhost",
+#         'PORT': "5432",
+#     }
+# }
+
+# db_from_env = dj_database_url.config()
+# DATABASES['default'].update(db_from_env)
+# DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -132,6 +139,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
@@ -142,3 +150,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+SERIALIZATION_MODULES = {
+    "geojson": "django.contrib.gis.serializers.geojson", 
+ }
