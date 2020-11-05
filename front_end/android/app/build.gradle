@@ -100,8 +100,8 @@ android {
         applicationId "com.indra"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 6
-        versionName "0.1.0"
+        versionCode 7
+        versionName "0.1.1"
       ndk {
         abiFilters "armeabi-v7a", 'arm64-v8a', 'x86','x86_64'
       }
